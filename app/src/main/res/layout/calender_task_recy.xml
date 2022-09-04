@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/backgroud"
+            >
+
+
+            <ImageView
+                android:id="@+id/imgPain"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/person2" />
+
+
+
+            <ImageView
+                android:id="@+id/imgPainViewUp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/down_arrow" />
+
+
+            <ImageView
+                android:id="@+id/imgPainView"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="20dp"
+                android:src="@drawable/down_arrow" />
+
+
+            <TextView
+                android:id="@+id/titleSyn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="25dp"
+                android:text="Pain"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/continuousSliderC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imgPain"
+                android:layout_marginTop="10dp"
+                android:stepSize="1"
+                android:valueFrom="0"
+                android:valueTo="10" />
+
+
+            <EditText
+                android:id="@+id/edt_notes"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/continuousSliderC"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/custom_input"
+                android:drawableStart="@drawable/edit"
+                android:drawablePadding="10dp"
+                android:fontFamily="sans-serif"
+                android:hint="Add notes"
+
+                android:paddingLeft="8dp"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="normal" />
+
+
+
+            <EditText
+                android:id="@+id/edt_medication"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/edt_notes"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/custom_input"
+                android:drawableStart="@drawable/edit"
+                android:drawablePadding="10dp"
+                android:fontFamily="sans-serif"
+                android:hint="Add Medication"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="normal" />
+
+
+            <ImageView
+                android:id="@+id/imgSave"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/edt_medication"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:src="@drawable/ic_baseline_arrow_forward_24" />
+
+
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+</RelativeLayout>

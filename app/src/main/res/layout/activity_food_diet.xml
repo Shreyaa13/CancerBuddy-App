@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroud"
+    tools:context=".food.food_DietActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_food"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:cardCornerRadius="1dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="@drawable/backgroud"
+            android:layout_height="50dp">
+
+            <ImageView
+                android:id="@+id/back_to_mainN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="20dp"
+                android:src="@drawable/back_24" />
+
+
+
+            <TextView
+                android:id="@+id/scheme_new_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="10dp"
+                android:text="Food and Diet"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+        <ImageView
+            android:id="@+id/food1"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@+id/card_food"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp"
+            android:padding="20dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/fo2" />
+
+
+        <ImageView
+            android:id="@+id/food2"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@+id/food1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:padding="10dp"
+
+            android:scaleType="fitXY"
+            android:src="@drawable/fo1" />
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+
+</ScrollView>

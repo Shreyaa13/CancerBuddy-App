@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.cancer.cancerbuddy">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.SET_ALARM" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+
+    <application
+        android:allowBackup="true"
+        android:configChanges="orientation|keyboardHidden|screenSize"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.CancerBuddy"
+        tools:targetApi="31">
+        <activity
+            android:name=".Record_Sys.RecordActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".Record_Sys.GraphChatActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Community.CommentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Record_Sys.TrackWebActivity"
+            android:exported="false" />
+        <activity
+            android:name=".food.RecipesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Exercise.ExerciseActivity5"
+            android:exported="false" />
+        <activity
+            android:name=".Exercise.ExerciseActivity4"
+            android:exported="false" />
+        <activity
+            android:name=".Exercise.ExerciseActivity3"
+            android:exported="false" />
+        <activity
+            android:name=".Exercise.ExerciseActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".Record_Sys.RecordSysActivity"
+            android:exported="false" />
+        <activity
+            android:name=".food.FoodActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TrackSyntomActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".AlarmActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Profile.MakeProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Record_Sys.TrackSyntomActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Community.CommPostActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AboutUsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Community.Community_FormActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Exercise.ExerciseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Exercise.ExerciseActivity1"
+            android:exported="false" />
+        <activity
+            android:name=".food.food_DietActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Record_Sys.Track_SystemActivity"
+            android:exported="false" />
+        <activity
+            android:name=".medicine.Medicine_ManagementActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TermActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Profile.ProfileUpdateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Profile.ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Auth.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Auth.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+
+        <receiver android:name=".medicine.AlarmReceiver" />
+    </application>
+
+</manifest>

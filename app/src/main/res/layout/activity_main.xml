@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/Drawable_layout"
+    android:background="@drawable/backgroud"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/main_page_toolbar"
+            layout="@layout/app_bar" />
+
+
+    <ScrollView
+        android:layout_marginTop="55dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+
+
+        <ImageView
+            android:id="@+id/bannerIc"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/main_img" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/mainT"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_below="@+id/bannerIc"
+            android:layout_margin="20dp"
+
+            android:background="@drawable/corner_theme"
+            app:cardBackgroundColor="@color/CardE"
+            app:cardCornerRadius="50dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:padding="15dp"
+                android:src="@drawable/pc1" />
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/fcard2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_below="@+id/bannerIc"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="20dp"
+
+            android:background="@drawable/corner_theme"
+            android:padding="10dp"
+            app:cardBackgroundColor="@color/CardE"
+            app:cardCornerRadius="50dp">
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:padding="15dp"
+                android:src="@drawable/pc2" />
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/asst"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="20dp"
+
+            android:layout_below="@+id/bannerIc"
+            android:background="@drawable/corner_theme"
+            app:cardBackgroundColor="@color/CardE"
+            app:cardCornerRadius="50dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:padding="15dp"
+                android:src="@drawable/pc3" />
+
+
+        </androidx.cardview.widget.CardView>
+        <RelativeLayout
+            android:id="@+id/llMAin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mainT"
+
+
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/fcard3"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="80dp"
+                android:background="@drawable/corner_theme"
+                app:cardBackgroundColor="@color/CardE"
+                app:cardCornerRadius="50dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:padding="15dp"
+
+                    android:src="@drawable/pc4" />
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/fcard4"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:cardBackgroundColor="@color/CardE"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="80dp"
+
+
+                app:cardCornerRadius="50dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:padding="15dp"
+                    android:src="@drawable/pc5" />
+
+            </androidx.cardview.widget.CardView>
+
+
+        </RelativeLayout>
+
+
+        <View
+            android:id="@+id/viewC"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@+id/llMAin"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="#BDADB4" />
+
+        <TextView
+            android:id="@+id/Contact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/viewC"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:text="Contact Us"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+
+        <ImageView
+            android:id="@+id/ic_mobile"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/Contact"
+            android:layout_marginStart="10dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_baseline_phone_24" />
+
+        <ImageView
+            android:id="@+id/ic_Email"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/ic_mobile"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_baseline_email_24" />
+
+
+        <TextView
+            android:id="@+id/ContactM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Contact"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="4dp"
+            android:text="+65 XXXX XXXX"
+            android:textAlignment="center"
+            android:textColor="@color/gray"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/ContactE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ContactM"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="19dp"
+            android:text="TangTimothy95@gmail.com"
+            android:textAlignment="center"
+            android:textColor="@color/gray"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/ContactEE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ContactE"
+
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="35dp"
+            android:fontFamily="sans-serif-light"
+            android:text="connect with us "
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ContactE"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:id="@+id/facebookIc"
+                android:layout_below="@+id/Contact"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:scaleType="fitXY"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/facebook" />
+
+            <ImageView
+                android:id="@+id/InstaIc"
+                android:layout_below="@+id/Contact"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:scaleType="fitXY"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/instagram" />
+            <ImageView
+                android:id="@+id/TwitterIc"
+                android:layout_below="@+id/Contact"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:scaleType="fitXY"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/twitter" />
+            <ImageView
+                android:id="@+id/TelegramIc"
+                android:layout_below="@+id/Contact"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:scaleType="fitXY"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/telegram" />
+            <ImageView
+                android:id="@+id/LinkedInIc"
+                android:layout_below="@+id/Contact"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:scaleType="fitXY"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/linkedin" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    </ScrollView>
+
+
+
+    <TextView
+        android:id="@+id/snackInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    </RelativeLayout>
+
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigation_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="3dp"
+        android:background="@drawable/backgroud"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/nav_profiel_header"
+
+
+        app:bottomInsetScrimEnabled="true"
+        app:itemShapeInsetBottom="@dimen/fbutton_default_padding_right"
+        app:menu="@menu/navigation_slider"/>
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

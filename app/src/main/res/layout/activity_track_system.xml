@@ -1,0 +1,2551 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Record_Sys.Track_SystemActivity">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardTrackS"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:cardCornerRadius="1dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:background="@drawable/backgroud"
+                android:layout_height="50dp">
+
+                <ImageView
+                    android:id="@+id/back_to_mainN"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:src="@drawable/back_24"/>
+
+
+                <TextView
+                    android:id="@+id/scheme_new_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="10dp"
+                    android:text="Record Symptoms"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/GoTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cardTrackS"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:visibility="gone"
+            android:text="Time"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+
+        <ImageView
+            android:id="@+id/ShowCalender"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/cardTrackS"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="20dp"
+            android:visibility="gone"
+
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/down_arrow" />
+
+
+        <ImageView
+            android:id="@+id/HideCalender"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/cardTrackS"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="20dp"
+            android:visibility="gone"
+
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/ic_baseline_keyboard_arrow_up_24" />
+
+
+
+        <RelativeLayout
+            android:id="@+id/rl1"
+            android:layout_below="@+id/GoTime"
+            android:layout_marginTop="20dp"
+            android:visibility="gone"
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/rlCalender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/blue"
+
+                >
+
+
+                <CalendarView
+
+                    android:id="@+id/SysCalender"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:dateTextAppearance="@style/CalenderViewDateCustomText"
+                    android:theme="@style/CalenderViewCustom"
+                    android:weekDayTextAppearance="@style/CalenderViewWeekCustomText" />
+
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/date_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/rlCalender"
+                android:text="Set the Date"
+                android:textColor="@android:color/background_dark"
+                android:textStyle="bold" />
+
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/add_taskCalender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:visibility="gone"
+                android:layout_marginBottom="30dp"
+                android:background="@color/white"
+                android:src="@drawable/add_24"
+                app:fabSize="normal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ShowEvent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/date_view"
+                tools:listitem="@layout/show_event_recy" />
+
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rl2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/GoTime"
+            android:layout_marginTop="20dp">
+
+            <LinearLayout
+                android:id="@+id/checkChart"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/custom_border">
+
+                <ImageView
+                    android:id="@+id/PosterP"
+                    android:layout_width="60dp"
+                    android:layout_height="80dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:src="@drawable/analysis" />
+
+
+                <TextView
+                    android:id="@+id/GoRecords"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="25dp"
+                    android:text="View Records"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+
+                <ImageView
+                    android:id="@+id/posterT"
+                    android:layout_width="60dp"
+                    android:layout_height="80dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:src="@drawable/right_arrow" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/Track_record"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/checkChart"
+                tools:listitem="@layout/track_record" />
+
+<!--
+            <RelativeLayout
+                android:id="@+id/RS"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_below="@+id/checkChart"
+                android:background="@drawable/custom_border2"
+                >
+
+                <ImageView
+                    android:id="@+id/up"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/add_24" />
+
+                <ImageView
+                    android:id="@+id/down"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"
+                    android:visibility="gone"
+
+                    android:src="@drawable/down_arrow"
+                    />
+
+                <TextView
+                    android:id="@+id/t"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="40dp"
+                    android:text="Pain "
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+
+
+
+
+                <EditText
+                    android:id="@+id/desc"
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_centerInParent="true"
+                    android:layout_below="@+id/t"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/custome_input_edt_text"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:visibility="gone"
+
+                    android:hint="Add desc."
+                    android:inputType="textPersonName"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    />
+
+
+                <RadioGroup
+                    android:id="@+id/RadioG"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/desc"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"
+
+                    android:layout_margin="10dp"
+                    android:background="@drawable/custome_input_edt_text"
+                    android:orientation="horizontal"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp">
+
+
+
+                    <RadioButton
+                        android:id="@+id/setup_None"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="None" />
+
+                    <RadioButton
+                        android:id="@+id/setup_Mild"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Mild " />
+
+                    <RadioButton
+                        android:id="@+id/setup_moderate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Moderate " />
+
+                    <RadioButton
+                        android:id="@+id/setup_severe"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Severe " />
+
+                </RadioGroup>
+
+
+                <LinearLayout
+                    android:id="@+id/l0"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/RadioG"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+
+                    <Button
+                        android:id="@+id/btn_regCancle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="Cancel"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_regOk"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="OK"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/RS1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:layout_below="@+id/RS"
+                android:background="@drawable/custom_border2"
+                >
+
+                <ImageView
+                    android:id="@+id/up1"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/add_24" />
+
+                <ImageView
+                    android:id="@+id/down1"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"
+                    android:visibility="gone"
+
+                    android:src="@drawable/down_arrow"
+                    />
+
+                <TextView
+                    android:id="@+id/t1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="40dp"
+                    android:text="Pain "
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+
+
+
+
+                <EditText
+                    android:id="@+id/desc1"
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_centerInParent="true"
+                    android:layout_below="@+id/t1"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/custome_input_edt_text"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:visibility="gone"
+
+                    android:hint="Add desc."
+                    android:inputType="textPersonName"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    />
+
+
+                <RadioGroup
+                    android:id="@+id/RadioG1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/desc1"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"
+
+                    android:layout_margin="10dp"
+                    android:background="@drawable/custome_input_edt_text"
+                    android:orientation="horizontal"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp">
+
+
+
+                    <RadioButton
+                        android:id="@+id/setup_None1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="None" />
+
+                    <RadioButton
+                        android:id="@+id/setup_Mild1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Mild " />
+
+                    <RadioButton
+                        android:id="@+id/setup_moderate1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Moderate " />
+
+                    <RadioButton
+                        android:id="@+id/setup_severe1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Severe " />
+
+                </RadioGroup>
+
+
+                <LinearLayout
+                    android:id="@+id/l01"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/RadioG1"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+
+                    <Button
+                        android:id="@+id/btn_regCancle1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="Cancel"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_regOk1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="OK"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/RS2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:layout_below="@+id/RS1"
+                android:background="@drawable/custom_border2"
+                >
+
+                <ImageView
+                    android:id="@+id/up2"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/add_24" />
+
+                <ImageView
+                    android:id="@+id/down2"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"
+                    android:visibility="gone"
+
+                    android:src="@drawable/down_arrow"
+                    />
+
+                <TextView
+                    android:id="@+id/t2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="40dp"
+                    android:text="Pain "
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+
+
+
+
+                <EditText
+                    android:id="@+id/desc2"
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_centerInParent="true"
+                    android:layout_below="@+id/t2"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/custome_input_edt_text"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:visibility="gone"
+
+                    android:hint="Add desc."
+                    android:inputType="textPersonName"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    />
+
+
+                <RadioGroup
+                    android:id="@+id/RadioG2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/desc2"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"
+
+                    android:layout_margin="10dp"
+                    android:background="@drawable/custome_input_edt_text"
+                    android:orientation="horizontal"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp">
+
+
+
+                    <RadioButton
+                        android:id="@+id/setup_None2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="None" />
+
+                    <RadioButton
+                        android:id="@+id/setup_Mild2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Mild " />
+
+                    <RadioButton
+                        android:id="@+id/setup_moderate2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Moderate " />
+
+                    <RadioButton
+                        android:id="@+id/setup_severe2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Severe " />
+
+                </RadioGroup>
+
+
+                <LinearLayout
+                    android:id="@+id/l02"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/RadioG2"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+
+                    <Button
+                        android:id="@+id/btn_regCancle2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="Cancel"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_regOk2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="OK"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/RS3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:layout_below="@+id/RS2"
+                android:background="@drawable/custom_border2"
+                >
+
+                <ImageView
+                    android:id="@+id/up3"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/add_24" />
+
+                <ImageView
+                    android:id="@+id/down3"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"
+                    android:visibility="gone"
+
+                    android:src="@drawable/down_arrow"
+                    />
+
+                <TextView
+                    android:id="@+id/t3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="40dp"
+                    android:text="Pain "
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+
+
+
+
+                <EditText
+                    android:id="@+id/desc3"
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_centerInParent="true"
+                    android:layout_below="@+id/t3"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/custome_input_edt_text"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:visibility="gone"
+
+                    android:hint="Add desc."
+                    android:inputType="textPersonName"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    />
+
+
+                <RadioGroup
+                    android:id="@+id/RadioG3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/desc3"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"
+
+                    android:layout_margin="10dp"
+                    android:background="@drawable/custome_input_edt_text"
+                    android:orientation="horizontal"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp">
+
+
+
+                    <RadioButton
+                        android:id="@+id/setup_None3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="None" />
+
+                    <RadioButton
+                        android:id="@+id/setup_Mild3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Mild " />
+
+                    <RadioButton
+                        android:id="@+id/setup_moderate3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Moderate " />
+
+                    <RadioButton
+                        android:id="@+id/setup_severe3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Severe " />
+
+                </RadioGroup>
+
+
+                <LinearLayout
+                    android:id="@+id/l03"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/RadioG3"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+
+                    <Button
+                        android:id="@+id/btn_regCancle3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="Cancel"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_regOk3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="OK"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/RS4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:layout_below="@+id/RS3"
+                android:background="@drawable/custom_border2"
+                >
+
+                <ImageView
+                    android:id="@+id/up4"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/add_24" />
+
+                <ImageView
+                    android:id="@+id/down4"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"
+                    android:visibility="gone"
+
+                    android:src="@drawable/down_arrow"
+                    />
+
+                <TextView
+                    android:id="@+id/t4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="40dp"
+                    android:text="Pain "
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+
+
+
+
+                <EditText
+                    android:id="@+id/desc4"
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_centerInParent="true"
+                    android:layout_below="@+id/t4"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/custome_input_edt_text"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:visibility="gone"
+
+                    android:hint="Add desc."
+                    android:inputType="textPersonName"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    />
+
+
+                <RadioGroup
+                    android:id="@+id/RadioG4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/desc4"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"
+
+                    android:layout_margin="10dp"
+                    android:background="@drawable/custome_input_edt_text"
+                    android:orientation="horizontal"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp">
+
+
+
+                    <RadioButton
+                        android:id="@+id/setup_None4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="None" />
+
+                    <RadioButton
+                        android:id="@+id/setup_Mild4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Mild " />
+
+                    <RadioButton
+                        android:id="@+id/setup_moderate4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Moderate " />
+
+                    <RadioButton
+                        android:id="@+id/setup_severe4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Severe " />
+
+                </RadioGroup>
+
+
+                <LinearLayout
+                    android:id="@+id/l04"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/RadioG4"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+
+                    <Button
+                        android:id="@+id/btn_regCancle4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="Cancel"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_regOk4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="OK"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/RS5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:layout_below="@+id/RS4"
+                android:background="@drawable/custom_border2"
+                >
+
+                <ImageView
+                    android:id="@+id/up5"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/add_24" />
+
+                <ImageView
+                    android:id="@+id/down5"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"
+                    android:visibility="gone"
+
+                    android:src="@drawable/down_arrow"
+                    />
+
+                <TextView
+                    android:id="@+id/t5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="40dp"
+                    android:text="Pain "
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+
+
+
+
+                <EditText
+                    android:id="@+id/desc5"
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_centerInParent="true"
+                    android:layout_below="@+id/t5"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/custome_input_edt_text"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:visibility="gone"
+
+                    android:hint="Add desc."
+                    android:inputType="textPersonName"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    />
+
+
+                <RadioGroup
+                    android:id="@+id/RadioG5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/desc5"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"
+
+                    android:layout_margin="10dp"
+                    android:background="@drawable/custome_input_edt_text"
+                    android:orientation="horizontal"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp">
+
+
+
+                    <RadioButton
+                        android:id="@+id/setup_None5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="None" />
+
+                    <RadioButton
+                        android:id="@+id/setup_Mild5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Mild " />
+
+                    <RadioButton
+                        android:id="@+id/setup_moderate5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Moderate " />
+
+                    <RadioButton
+                        android:id="@+id/setup_severe5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Severe " />
+
+                </RadioGroup>
+
+
+                <LinearLayout
+                    android:id="@+id/l05"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/RadioG5"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+
+                    <Button
+                        android:id="@+id/btn_regCancle5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="Cancel"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_regOk5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="OK"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/RS6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:layout_below="@+id/RS5"
+                android:background="@drawable/custom_border2"
+                >
+
+                <ImageView
+                    android:id="@+id/up6"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/add_24" />
+
+                <ImageView
+                    android:id="@+id/down6"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"
+                    android:visibility="gone"
+
+                    android:src="@drawable/down_arrow"
+                    />
+
+                <TextView
+                    android:id="@+id/t6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="40dp"
+                    android:text="Pain "
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+
+
+
+
+                <EditText
+                    android:id="@+id/desc6"
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_centerInParent="true"
+                    android:layout_below="@+id/t6"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/custome_input_edt_text"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:visibility="gone"
+
+                    android:hint="Add desc."
+                    android:inputType="textPersonName"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    />
+
+
+                <RadioGroup
+                    android:id="@+id/RadioG6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/desc6"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"
+
+                    android:layout_margin="10dp"
+                    android:background="@drawable/custome_input_edt_text"
+                    android:orientation="horizontal"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp">
+
+
+
+                    <RadioButton
+                        android:id="@+id/setup_None6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="None" />
+
+                    <RadioButton
+                        android:id="@+id/setup_Mild6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Mild " />
+
+                    <RadioButton
+                        android:id="@+id/setup_moderate6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Moderate " />
+
+                    <RadioButton
+                        android:id="@+id/setup_severe6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Severe " />
+
+                </RadioGroup>
+
+
+                <LinearLayout
+                    android:id="@+id/l06"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/RadioG6"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+
+                    <Button
+                        android:id="@+id/btn_regCancle6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="Cancel"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_regOk6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="OK"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/RS7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:layout_below="@+id/RS6"
+                android:background="@drawable/custom_border2"
+                >
+
+                <ImageView
+                    android:id="@+id/up7"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/add_24" />
+
+                <ImageView
+                    android:id="@+id/down7"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"
+                    android:visibility="gone"
+
+                    android:src="@drawable/down_arrow"
+                    />
+
+                <TextView
+                    android:id="@+id/t7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="40dp"
+                    android:text="Pain "
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+
+
+
+
+                <EditText
+                    android:id="@+id/desc7"
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_centerInParent="true"
+                    android:layout_below="@+id/t7"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/custome_input_edt_text"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:visibility="gone"
+
+                    android:hint="Add desc."
+                    android:inputType="textPersonName"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    />
+
+
+                <RadioGroup
+                    android:id="@+id/RadioG7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/desc7"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"
+
+                    android:layout_margin="10dp"
+                    android:background="@drawable/custome_input_edt_text"
+                    android:orientation="horizontal"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp">
+
+
+
+                    <RadioButton
+                        android:id="@+id/setup_None7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="None" />
+
+                    <RadioButton
+                        android:id="@+id/setup_Mild7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Mild " />
+
+                    <RadioButton
+                        android:id="@+id/setup_moderate7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Moderate " />
+
+                    <RadioButton
+                        android:id="@+id/setup_severe7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Severe " />
+
+                </RadioGroup>
+
+
+                <LinearLayout
+                    android:id="@+id/l07"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/RadioG7"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+
+                    <Button
+                        android:id="@+id/btn_regCancle7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="Cancel"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_regOk7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="OK"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/RS8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_below="@+id/RS7"
+                android:background="@drawable/custom_border2"
+                >
+
+                <ImageView
+                    android:id="@+id/up8"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/add_24" />
+
+                <ImageView
+                    android:id="@+id/down8"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"
+                    android:visibility="gone"
+
+                    android:src="@drawable/down_arrow"
+                    />
+
+                <TextView
+                    android:id="@+id/t8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="40dp"
+                    android:text="Pain "
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+
+
+
+
+                <EditText
+                    android:id="@+id/desc8"
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_centerInParent="true"
+                    android:layout_below="@+id/t8"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/custome_input_edt_text"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:visibility="gone"
+
+                    android:hint="Add desc."
+                    android:inputType="textPersonName"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    />
+
+
+                <RadioGroup
+                    android:id="@+id/RadioG8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/desc8"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"
+
+                    android:layout_margin="10dp"
+                    android:background="@drawable/custome_input_edt_text"
+                    android:orientation="horizontal"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp">
+
+
+
+                    <RadioButton
+                        android:id="@+id/setup_None8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="None" />
+
+                    <RadioButton
+                        android:id="@+id/setup_Mild8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Mild " />
+
+                    <RadioButton
+                        android:id="@+id/setup_moderate8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Moderate " />
+
+                    <RadioButton
+                        android:id="@+id/setup_severe8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Severe " />
+
+                </RadioGroup>
+
+
+                <LinearLayout
+                    android:id="@+id/l08"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/RadioG8"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+
+                    <Button
+                        android:id="@+id/btn_regCancle8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="Cancel"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_regOk8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="OK"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/RS9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:layout_below="@+id/RS8"
+                android:background="@drawable/custom_border2"
+                >
+
+                <ImageView
+                    android:id="@+id/up9"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/add_24" />
+
+                <ImageView
+                    android:id="@+id/down9"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"
+                    android:visibility="gone"
+
+                    android:src="@drawable/down_arrow"
+                    />
+
+                <TextView
+                    android:id="@+id/t9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="40dp"
+                    android:text="Pain "
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+
+
+
+
+                <EditText
+                    android:id="@+id/desc9"
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_centerInParent="true"
+                    android:layout_below="@+id/t9"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/custome_input_edt_text"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:visibility="gone"
+
+                    android:hint="Add desc."
+                    android:inputType="textPersonName"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    />
+
+
+                <RadioGroup
+                    android:id="@+id/RadioG9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/desc9"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"
+
+                    android:layout_margin="10dp"
+                    android:background="@drawable/custome_input_edt_text"
+                    android:orientation="horizontal"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp">
+
+
+
+                    <RadioButton
+                        android:id="@+id/setup_None9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="None" />
+
+                    <RadioButton
+                        android:id="@+id/setup_Mild9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Mild " />
+
+                    <RadioButton
+                        android:id="@+id/setup_moderate9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Moderate " />
+
+                    <RadioButton
+                        android:id="@+id/setup_severe9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Severe " />
+
+                </RadioGroup>
+
+
+                <LinearLayout
+                    android:id="@+id/l09"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/RadioG9"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+
+                    <Button
+                        android:id="@+id/btn_regCancle9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="Cancel"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_regOk9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="OK"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/RS10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:layout_below="@+id/RS9"
+                android:background="@drawable/custom_border2"
+                >
+
+                <ImageView
+                    android:id="@+id/up10"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/add_24" />
+
+                <ImageView
+                    android:id="@+id/down10"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"
+                    android:visibility="gone"
+
+                    android:src="@drawable/down_arrow"
+                    />
+
+                <TextView
+                    android:id="@+id/t10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="40dp"
+                    android:text="Pain "
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+
+
+
+
+                <EditText
+                    android:id="@+id/desc10"
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_centerInParent="true"
+                    android:layout_below="@+id/t10"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/custome_input_edt_text"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:visibility="gone"
+
+                    android:hint="Add desc."
+                    android:inputType="textPersonName"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    />
+
+
+                <RadioGroup
+                    android:id="@+id/RadioG10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/desc10"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"
+
+                    android:layout_margin="10dp"
+                    android:background="@drawable/custome_input_edt_text"
+                    android:orientation="horizontal"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp">
+
+
+
+                    <RadioButton
+                        android:id="@+id/setup_None10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="None" />
+
+                    <RadioButton
+                        android:id="@+id/setup_Mild10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Mild " />
+
+                    <RadioButton
+                        android:id="@+id/setup_moderate10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Moderate " />
+
+                    <RadioButton
+                        android:id="@+id/setup_severe10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Severe " />
+
+                </RadioGroup>
+
+
+                <LinearLayout
+                    android:id="@+id/l010"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/RadioG10"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+
+                    <Button
+                        android:id="@+id/btn_regCancle10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="Cancel"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_regOk10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="OK"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/RS11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:layout_below="@+id/RS10"
+                android:background="@drawable/custom_border2"
+                >
+
+                <ImageView
+                    android:id="@+id/up11"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/add_24" />
+
+                <ImageView
+                    android:id="@+id/down11"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"
+                    android:visibility="gone"
+
+                    android:src="@drawable/down_arrow"
+                    />
+
+                <TextView
+                    android:id="@+id/t11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="40dp"
+                    android:text="Pain "
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+
+
+
+
+                <EditText
+                    android:id="@+id/desc11"
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_centerInParent="true"
+                    android:layout_below="@+id/t11"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/custome_input_edt_text"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:visibility="gone"
+
+                    android:hint="Add desc."
+                    android:inputType="textPersonName"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    />
+
+
+                <RadioGroup
+                    android:id="@+id/RadioG11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/desc11"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"
+
+                    android:layout_margin="10dp"
+                    android:background="@drawable/custome_input_edt_text"
+                    android:orientation="horizontal"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp">
+
+
+
+                    <RadioButton
+                        android:id="@+id/setup_None11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="None" />
+
+                    <RadioButton
+                        android:id="@+id/setup_Mild11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Mild " />
+
+                    <RadioButton
+                        android:id="@+id/setup_moderate11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Moderate " />
+
+                    <RadioButton
+                        android:id="@+id/setup_severe11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Severe " />
+
+                </RadioGroup>
+
+
+                <LinearLayout
+                    android:id="@+id/l011"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/RadioG11"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+
+                    <Button
+                        android:id="@+id/btn_regCancle11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="Cancel"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_regOk11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="OK"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/RS12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_below="@+id/RS11"
+                android:background="@drawable/custom_border2"
+                >
+
+                <ImageView
+                    android:id="@+id/up12"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/add_24" />
+
+                <ImageView
+                    android:id="@+id/down12"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"
+                    android:visibility="gone"
+
+                    android:src="@drawable/down_arrow"
+                    />
+
+                <TextView
+                    android:id="@+id/t12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="40dp"
+                    android:text="Pain "
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+
+
+
+
+                <EditText
+                    android:id="@+id/desc12"
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_centerInParent="true"
+                    android:layout_below="@+id/t12"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/custome_input_edt_text"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:visibility="gone"
+
+                    android:hint="Add desc."
+                    android:inputType="textPersonName"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    />
+
+
+                <RadioGroup
+                    android:id="@+id/RadioG12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/desc12"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"
+
+                    android:layout_margin="10dp"
+                    android:background="@drawable/custome_input_edt_text"
+                    android:orientation="horizontal"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp">
+
+
+
+                    <RadioButton
+                        android:id="@+id/setup_None12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="None" />
+
+                    <RadioButton
+                        android:id="@+id/setup_Mild12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Mild " />
+
+                    <RadioButton
+                        android:id="@+id/setup_moderate12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Moderate " />
+
+                    <RadioButton
+                        android:id="@+id/setup_severe12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Severe " />
+
+                </RadioGroup>
+
+
+                <LinearLayout
+                    android:id="@+id/l012"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/RadioG12"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+
+                    <Button
+                        android:id="@+id/btn_regCancle12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="Cancel"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_regOk12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="OK"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/RS13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:layout_below="@+id/RS12"
+                android:background="@drawable/custom_border2"
+                >
+
+                <ImageView
+                    android:id="@+id/up13"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/add_24" />
+
+                <ImageView
+                    android:id="@+id/down13"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"
+                    android:visibility="gone"
+
+                    android:src="@drawable/down_arrow"
+                    />
+
+                <TextView
+                    android:id="@+id/t13"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="40dp"
+                    android:text="Pain "
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+
+
+
+
+                <EditText
+                    android:id="@+id/desc13"
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_centerInParent="true"
+                    android:layout_below="@+id/t13"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/custome_input_edt_text"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:visibility="gone"
+
+                    android:hint="Add desc."
+                    android:inputType="textPersonName"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    />
+
+
+                <RadioGroup
+                    android:id="@+id/RadioG13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/desc13"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"
+
+                    android:layout_margin="10dp"
+                    android:background="@drawable/custome_input_edt_text"
+                    android:orientation="horizontal"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp">
+
+
+
+                    <RadioButton
+                        android:id="@+id/setup_None13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="None" />
+
+                    <RadioButton
+                        android:id="@+id/setup_Mild13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Mild " />
+
+                    <RadioButton
+                        android:id="@+id/setup_moderate13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Moderate " />
+
+                    <RadioButton
+                        android:id="@+id/setup_severe13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Severe " />
+
+                </RadioGroup>
+
+
+                <LinearLayout
+                    android:id="@+id/l013"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/RadioG13"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+
+                    <Button
+                        android:id="@+id/btn_regCancle13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="Cancel"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_regOk13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="OK"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/RS14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_below="@+id/RS13"
+                android:background="@drawable/custom_border2"
+                >
+
+                <ImageView
+                    android:id="@+id/up14"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/add_24" />
+
+                <ImageView
+                    android:id="@+id/down14"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"
+                    android:visibility="gone"
+
+                    android:src="@drawable/down_arrow"
+                    />
+
+                <TextView
+                    android:id="@+id/t14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="40dp"
+                    android:text="Pain "
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+
+
+
+
+                <EditText
+                    android:id="@+id/desc14"
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_centerInParent="true"
+                    android:layout_below="@+id/t14"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/custome_input_edt_text"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:visibility="gone"
+
+                    android:hint="Add desc."
+                    android:inputType="textPersonName"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    />
+
+
+                <RadioGroup
+                    android:id="@+id/RadioG14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/desc14"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"
+
+                    android:layout_margin="10dp"
+                    android:background="@drawable/custome_input_edt_text"
+                    android:orientation="horizontal"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp">
+
+
+
+                    <RadioButton
+                        android:id="@+id/setup_None14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="None" />
+
+                    <RadioButton
+                        android:id="@+id/setup_Mild14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Mild " />
+
+                    <RadioButton
+                        android:id="@+id/setup_moderate14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Moderate " />
+
+                    <RadioButton
+                        android:id="@+id/setup_severe14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Severe " />
+
+                </RadioGroup>
+
+
+                <LinearLayout
+                    android:id="@+id/l014"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/RadioG14"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+
+                    <Button
+                        android:id="@+id/btn_regCancle14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="Cancel"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_regOk14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="OK"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+
+
+            </RelativeLayout>
+           -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </RelativeLayout>
+
+
+
+
+
+    </RelativeLayout>
+
+
+
+</ScrollView>

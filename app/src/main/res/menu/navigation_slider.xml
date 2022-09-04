@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+
+    <item
+        android:id="@+id/nav_profile"
+        android:title="@string/home"
+        android:icon="@drawable/home"/>
+
+        <item
+        android:id="@+id/nav_medicine"
+        android:title="@string/medicine"
+        android:icon="@drawable/pc1"
+        />
+
+    <item
+        android:id="@+id/nav_track_sym"
+        android:title="@string/track_sym"
+        android:icon="@drawable/pc2"
+        />
+    <item
+        android:id="@+id/nav_track_sym1"
+        android:title="@string/track_sym1"
+        android:icon="@drawable/analysis"
+        />
+
+    <item
+        android:id="@+id/nav_food_diet"
+        android:title="@string/food_diet"
+        android:icon="@drawable/pc3"
+        />
+    <item
+        android:id="@+id/nav_exercise"
+        android:title="@string/exercise"
+        android:icon="@drawable/pc4"
+        />
+
+    <item
+        android:id="@+id/nav_communityf"
+        android:title="@string/communityf"
+        android:icon="@drawable/pc5"
+        />
+
+
+
+            <item
+                android:id="@+id/nav_about_me"
+                android:icon="@android:drawable/ic_menu_help"
+                android:title="@string/about_us" />
+
+
+    <item
+        android:id="@+id/nav_TermC"
+        android:title="@string/TermC"
+        android:icon="@android:drawable/ic_secure"
+        />
+
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/logout"
+                android:title="@string/logout" />
+
+            <item android:title="@string/version_name"/>
+            <item android:title="@string/version_name1"/>
+            <item android:title="@string/version_name2"/>
+
+</menu>

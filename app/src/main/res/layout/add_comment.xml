@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_margin="5dp"
+    android:id="@+id/event_showR"
+    android:background="@color/CardE"
+    android:layout_height="wrap_content">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/commP"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/profile">
+
+    </de.hdodenhof.circleimageview.CircleImageView>
+
+    <TextView
+        android:id="@+id/CUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="10dp"
+        android:text="****"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/CDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/CUser"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="3dp"
+        android:text="*****"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/gray"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/CommentC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/CDate"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Though stages I through IV are the most common, there is also stage zero. This earliest phase describes cancer that is still localized to the area in which it started. Cancers that are still in stage zero are usually easily treatable and are considered pre-cancerous by most healthcare providers"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="9sp"
+        android:textStyle="bold"
+        tools:ignore="SmallSp" />
+
+
+</RelativeLayout>

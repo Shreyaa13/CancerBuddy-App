@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp"
+
+    android:layout_marginTop="30dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/mainT"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+
+        app:cardCornerRadius="10dp"
+       >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            app:cardCornerRadius="10dp"
+
+            android:layout_height="wrap_content">
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/commP"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/profile">
+
+            </de.hdodenhof.circleimageview.CircleImageView>
+
+            <TextView
+                android:id="@+id/NameC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="10dp"
+                android:text="****"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/Date_and_Time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/NameC"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="3dp"
+                android:text="*****"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="@color/gray"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imgOption"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/options" />
+
+
+            <TextView
+                android:id="@+id/DescA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Date_and_Time"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Though stages I through IV are the most common, there is also stage zero. This earliest phase describes cancer that is still localized to the area in which it started. Cancers that are still in stage zero are usually easily treatable and are considered pre-cancerous by most healthcare providers"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="9sp"
+                android:textStyle="bold"
+                tools:ignore="SmallSp" />
+
+
+
+
+            <View
+                android:id="@+id/viewA"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@+id/DescA"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="#BDADB4" />
+
+
+            <ImageView
+                android:id="@+id/imgComm"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@+id/viewA"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/canlogo" />
+
+            <View
+                android:id="@+id/viewC"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@+id/imgComm"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="#D3D2D2" />
+
+
+            <ImageView
+                android:id="@+id/imgLike"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_below="@+id/viewC"
+                android:layout_marginStart="20dp"
+                android:src="@drawable/like" />
+
+            <ImageView
+                android:id="@+id/imgLiked"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_below="@+id/viewC"
+                android:layout_marginStart="20dp"
+                android:visibility="gone"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/thumb_up" />
+
+            <TextView
+                android:id="@+id/likecountA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/viewC"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="5dp"
+                android:text="10"
+                android:textAlignment="textStart"
+                android:textColor="@color/green"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:ignore="SmallSp" />
+
+
+            <ImageView
+                android:id="@+id/imgdislike"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_below="@+id/viewC"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/dislike" />
+
+            <ImageView
+                android:id="@+id/imgDisLiked"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:visibility="gone"
+
+                android:layout_below="@+id/viewC"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/thumb_down" />
+
+            <TextView
+                android:id="@+id/dislikecountA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/viewC"
+                android:layout_marginStart="210dp"
+                android:layout_marginTop="5dp"
+                android:text="10"
+                android:textAlignment="textStart"
+
+                android:textColor="@color/red"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:ignore="SmallSp" />
+
+            <ImageView
+                android:id="@+id/imgcomment"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_below="@+id/viewC"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="40dp"
+                android:src="@drawable/comment" />
+
+
+            <TextView
+                android:id="@+id/commentA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/viewC"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:text="10"
+                android:textAlignment="textStart"
+                android:textColor="@color/blue"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:ignore="SmallSp" />
+
+
+            <!--  <View
+                  android:layout_width="match_parent"
+                  android:layout_height="2dp"
+                  android:layout_below="@+id/imgcomment"
+                  android:background="#070003"
+                  />-->
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

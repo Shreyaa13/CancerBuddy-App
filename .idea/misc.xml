@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/SHREYA AGARWAL/AndroidStudioProjects/CancerBuddySep4/CancerBuddy/app/src/main/res/layout/activity_about_us.xml" value="0.1796875" />
+        <entry key="..\:/Users/SHREYA AGARWAL/AndroidStudioProjects/CancerBuddySep4/CancerBuddy/app/src/main/res/layout/activity_alarm.xml" value="0.1796875" />
+        <entry key="..\:/Users/SHREYA AGARWAL/AndroidStudioProjects/CancerBuddySep4/CancerBuddy/app/src/main/res/layout/activity_exercise1.xml" value="0.1796875" />
+        <entry key="..\:/Users/SHREYA AGARWAL/AndroidStudioProjects/CancerBuddySep4/CancerBuddy/app/src/main/res/layout/activity_food.xml" value="0.1796875" />
+        <entry key="..\:/Users/SHREYA AGARWAL/AndroidStudioProjects/CancerBuddySep4/CancerBuddy/app/src/main/res/layout/activity_food_diet.xml" value="0.1796875" />
+        <entry key="..\:/Users/SHREYA AGARWAL/AndroidStudioProjects/CancerBuddySep4/CancerBuddy/app/src/main/res/layout/activity_graph_chat.xml" value="0.1796875" />
+        <entry key="..\:/Users/SHREYA AGARWAL/AndroidStudioProjects/CancerBuddySep4/CancerBuddy/app/src/main/res/layout/activity_medicine_management.xml" value="0.1796875" />
+        <entry key="..\:/Users/SHREYA AGARWAL/AndroidStudioProjects/CancerBuddySep4/CancerBuddy/app/src/main/res/layout/activity_record2.xml" value="0.1796875" />
+        <entry key="..\:/Users/SHREYA AGARWAL/AndroidStudioProjects/CancerBuddySep4/CancerBuddy/app/src/main/res/layout/activity_record_sys.xml" value="0.1796875" />
+        <entry key="..\:/Users/SHREYA AGARWAL/AndroidStudioProjects/CancerBuddySep4/CancerBuddy/app/src/main/res/layout/activity_term.xml" value="0.16690856313497823" />
+        <entry key="..\:/Users/SHREYA AGARWAL/AndroidStudioProjects/CancerBuddySep4/CancerBuddy/app/src/main/res/layout/activity_track_syntom.xml" value="0.1796875" />
+        <entry key="..\:/Users/SHREYA AGARWAL/AndroidStudioProjects/CancerBuddySep4/CancerBuddy/app/src/main/res/layout/activity_track_syntom2.xml" value="0.1796875" />
+        <entry key="..\:/Users/SHREYA AGARWAL/AndroidStudioProjects/CancerBuddySep4/CancerBuddy/app/src/main/res/layout/activity_track_system.xml" value="0.1796875" />
+        <entry key="..\:/Users/SHREYA AGARWAL/AndroidStudioProjects/CancerBuddySep4/CancerBuddy/app/src/main/res/layout/activity_track_web.xml" value="0.1796875" />
+        <entry key="..\:/Users/SHREYA AGARWAL/AndroidStudioProjects/CancerBuddySep4/CancerBuddy/app/src/main/res/layout/calendar_cell.xml" value="0.1796875" />
+        <entry key="..\:/Users/SHREYA AGARWAL/AndroidStudioProjects/CancerBuddySep4/CancerBuddy/app/src/main/res/layout/calender_task_recy.xml" value="0.1796875" />
+        <entry key="..\:/Users/SHREYA AGARWAL/AndroidStudioProjects/CancerBuddySep4/CancerBuddy/app/src/main/res/layout/dialog_input_alarm.xml" value="0.1796875" />
+        <entry key="..\:/Users/SHREYA AGARWAL/AndroidStudioProjects/CancerBuddySep4/CancerBuddy/app/src/main/res/layout/dialog_post_edit.xml" value="0.1796875" />
+        <entry key="..\:/Users/SHREYA AGARWAL/AndroidStudioProjects/CancerBuddySep4/CancerBuddy/app/src/main/res/layout/dialog_post_medicine.xml" value="0.1796875" />
+        <entry key="..\:/Users/SHREYA AGARWAL/AndroidStudioProjects/CancerBuddySep4/CancerBuddy/app/src/main/res/layout/food_desc.xml" value="0.1796875" />
+        <entry key="..\:/Users/SHREYA AGARWAL/AndroidStudioProjects/CancerBuddySep4/CancerBuddy/app/src/main/res/layout/food_desc1.xml" value="0.1796875" />
+        <entry key="..\:/Users/SHREYA AGARWAL/AndroidStudioProjects/CancerBuddySep4/CancerBuddy/app/src/main/res/layout/image_slide.xml" value="0.1796875" />
+        <entry key="..\:/Users/SHREYA AGARWAL/AndroidStudioProjects/CancerBuddySep4/CancerBuddy/app/src/main/res/layout/mmrecy.xml" value="0.1796875" />
+        <entry key="..\:/Users/SHREYA AGARWAL/AndroidStudioProjects/CancerBuddySep4/CancerBuddy/app/src/main/res/layout/nav_profiel_header.xml" value="0.1796875" />
+        <entry key="..\:/Users/SHREYA AGARWAL/AndroidStudioProjects/CancerBuddySep4/CancerBuddy/app/src/main/res/layout/show_event_recy.xml" value="0.1796875" />
+        <entry key="..\:/Users/SHREYA AGARWAL/AndroidStudioProjects/CancerBuddySep4/CancerBuddy/app/src/main/res/layout/social_comm.xml" value="0.1796875" />
+        <entry key="..\:/Users/SHREYA AGARWAL/AndroidStudioProjects/CancerBuddySep4/CancerBuddy/app/src/main/res/layout/track_record.xml" value="0.1796875" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroud"
+    tools:context=".Community.CommPostActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_headerComPost"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:cardCornerRadius="1dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="@drawable/backgroud"
+            android:layout_height="50dp">
+
+            <ImageView
+                android:id="@+id/back_to_mainN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="20dp"
+                android:src="@drawable/back_24" />
+
+
+            <TextView
+                android:id="@+id/scheme_new_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="10dp"
+                android:text="Community Post"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/NameCP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/card_headerComPost"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="10dp"
+        android:text="Chandeshwar Sharma"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/Date_and_TimeP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/NameCP"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="3dp"
+        android:text="23/08/2022 9:15 PM"
+        android:visibility="gone"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+
+    <EditText
+        android:id="@+id/descPost"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:layout_below="@+id/Date_and_TimeP"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/custom_input"
+        android:drawablePadding="10dp"
+        android:fontFamily="sans-serif"
+        android:hint="Description..."
+        android:paddingLeft="8dp"
+        android:textAlignment="viewStart"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="normal" />
+
+    <ImageView
+        android:id="@+id/imgComm"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/descPost"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/custom_border1"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:src="@drawable/instagram_post" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cdsPost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/imgComm"
+        app:cardCornerRadius="15dp">
+
+        <Button
+            android:id="@+id/PostC"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:text="Post"
+            android:textColor="@color/white"
+            android:background="@drawable/button"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            />
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+</RelativeLayout>
