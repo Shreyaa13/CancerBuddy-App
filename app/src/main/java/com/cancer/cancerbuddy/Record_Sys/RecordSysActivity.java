@@ -21,21 +21,17 @@ public class RecordSysActivity extends AppCompatActivity {
     // creating a variable
     // for our graph view.
 
-
     private FirebaseAuth mAuth;
     private String CurrentUser;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference firebaseReference,GetGraphDataRef;
     Dialog dialog;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_record_sys);
         BarChart chart = (BarChart) findViewById(R.id.chart);
-
 
        /* BarData data = new BarData(getXAxisValues(),
                 getDataSet());
@@ -46,6 +42,7 @@ public class RecordSysActivity extends AppCompatActivity {
 */
     }
 
+    //future development....trying to map graph
     private ArrayList getDataSet() {
         ArrayList dataSets = null;
 
@@ -98,7 +95,6 @@ public class RecordSysActivity extends AppCompatActivity {
         BarDataSet barDataSet3 = new BarDataSet(valueSet3, "Brand 3");
         //  barDataSet3.setColors(ColorTemplate.PASTEL_COLORS);
         barDataSet3.setColor(Color.rgb(0, 15, 0));
-
 
         dataSets = new ArrayList<>();
         dataSets.add(barDataSet1);

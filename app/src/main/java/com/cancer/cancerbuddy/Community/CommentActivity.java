@@ -49,10 +49,8 @@ public class CommentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_comment);
 
-
         Intent myIntent = getIntent();
         getPostId = myIntent.getStringExtra("Id");
-
 
         mAuth = FirebaseAuth.getInstance();
         currentUserID = mAuth.getCurrentUser().getUid();
@@ -72,11 +70,9 @@ public class CommentActivity extends AppCompatActivity {
                 inputData();
             }
         });
-
-
-
     }
 
+    //load all comments
     private void LoadAllPost() {
         commModels = new ArrayList<>();
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child( "Post" ).child("Comment");
@@ -86,29 +82,22 @@ public class CommentActivity extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         commModels.clear();
-
                         for (DataSnapshot ds : snapshot.getChildren()) {
                             CommentModel SModel = ds.getValue( CommentModel.class );
-
                             commModels.add( SModel );
-
-
                         }
                         commAdapters = new CommentAdapter( CommentActivity.this, commModels );
                         ShowComment.setAdapter( commAdapters );
-
                     }
-
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
-
                     }
                 } );
 
     }
 
-
     private String DescPost;
+    //typing comments
     private void inputData()
     {
         DescPost = AddComm.getText().toString().trim();
@@ -122,29 +111,23 @@ public class CommentActivity extends AppCompatActivity {
         }
     }
 
+    //storing comment to database
     private void PostSocial()
     {
-
         final String PostId= ""+System.nanoTime();
 
         String saveCurrentDate, saveCurrentTime;
         Calendar calendar = Calendar.getInstance();
         @SuppressLint("SimpleDateFormat") SimpleDateFormat currentDate = new SimpleDateFormat( " dd/MM/yyyy" );
         saveCurrentDate = currentDate.format( calendar.getTime() );
-
         @SuppressLint("SimpleDateFormat") SimpleDateFormat currentTime = new SimpleDateFormat( "HH:mm:ss a" );
         saveCurrentTime = currentTime.format( calendar.getTime() );
-
 
             HashMap<String, Object> hashMap = new HashMap<>(  );
             hashMap.put( "PostId", ""+ PostId);
             hashMap.put( "UserId", ""+ currentUserID);
             hashMap.put( "Comm", ""+ DescPost);
             hashMap.put( "Date", ""+ saveCurrentDate + " " +saveCurrentTime);
-
-
-
-
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child( "Post" ).child("Comment");
 
@@ -164,8 +147,5 @@ public class CommentActivity extends AppCompatActivity {
 
                         }
                     } );
-
-
     }
-
 }

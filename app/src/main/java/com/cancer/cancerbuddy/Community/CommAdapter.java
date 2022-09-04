@@ -43,10 +43,6 @@ private List<CommModel> list;
 
     Dialog dialog;
 
-
-
-
-
 public CommAdapter(Context context, List<CommModel> list) {
         this.context = context;
         this.list = list;
@@ -62,23 +58,17 @@ public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 public void onBindViewHolder(ViewHolder holder, int position) {
         CommModel commModel = list.get(position);
 
-
     mAuth = FirebaseAuth.getInstance();
     currentUserID = mAuth.getCurrentUser().getUid();
     CommRef = FirebaseDatabase.getInstance().getReference().child( "Community" );
     UsersRef = FirebaseDatabase.getInstance().getReference().child( "Users" ).child( currentUserID );
 
-
-
     // getData
-
-
     String Id = commModel.getPostId();
     String name = commModel.getUser_Name();
     String date = commModel.getDate();
     String desc = commModel.getDesc();
     String img = commModel.getImage();
-
 
  /*   String like = commModel.getImgLike();
     String liked = commModel.getImgLike();
@@ -86,7 +76,6 @@ public void onBindViewHolder(ViewHolder holder, int position) {
     String disliked = commModel.getImgLike();*/
 
     // setData
-
     holder.NameC.setText( name );
     holder.Date_and_Time.setText( date );
     holder.DescA.setText( desc );
@@ -112,18 +101,13 @@ public void onBindViewHolder(ViewHolder holder, int position) {
                     context.startActivity(intent);
                 }
             });
-
         }
     });
-
-
-
 
 /*
 
     if (like=="1")
     {
-
         holder.imgLike.setVisibility(View.VISIBLE);
         holder.imgLiked.setVisibility(View.INVISIBLE);
         holder.imgdislike.setVisibility(View.VISIBLE);
@@ -153,6 +137,7 @@ public void onBindViewHolder(ViewHolder holder, int position) {
     }
 */
 
+    //storing likes data to database
     holder.imgLike.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -228,6 +213,7 @@ public void onBindViewHolder(ViewHolder holder, int position) {
         }
     });*/
 
+    //storing dislikes data to database
     holder.imgdislike.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -237,8 +223,6 @@ public void onBindViewHolder(ViewHolder holder, int position) {
             dialog.setContentView(R.layout.dialog_wait1);
             dialog.setCanceledOnTouchOutside(false);
             dialog.show();
-
-
 
             HashMap<String, Object> hashMap = new HashMap<>(  );
             hashMap.put( "Liked", "3");
@@ -349,7 +333,6 @@ public void onBindViewHolder(ViewHolder holder, int position) {
         }
     });*/
 
-
     DatabaseReference referenceLike = FirebaseDatabase.getInstance().getReference().child( "Post" ).child("like");
 
     referenceLike.child(commModel.getPostId()).orderByChild("User_ID").equalTo(currentUserID)
@@ -367,8 +350,6 @@ public void onBindViewHolder(ViewHolder holder, int position) {
                 holder.imgLike.setVisibility(View.GONE);
                 holder.imgLiked.setVisibility(View.VISIBLE);
 
-
-
             }
             else
             {
@@ -381,8 +362,6 @@ public void onBindViewHolder(ViewHolder holder, int position) {
 
         }
     } );
-
-
 
     DatabaseReference referenceDisLike = FirebaseDatabase.getInstance().getReference().child( "Post" ).child("Dislike");
 
@@ -400,9 +379,6 @@ public void onBindViewHolder(ViewHolder holder, int position) {
                 holder.commentA.setText( Integer.toString( sum )  );*/
                         holder.imgdislike.setVisibility(View.GONE);
                         holder.imgDisLiked.setVisibility(View.VISIBLE);
-
-
-
                     }
                     else
                     {
@@ -416,10 +392,6 @@ public void onBindViewHolder(ViewHolder holder, int position) {
                 }
             } );
 
-
-
-
-
     DatabaseReference reference1 = FirebaseDatabase.getInstance().getReference().child( "Post" ).child("Comment");
 
     reference1.child(commModel.getPostId()).addValueEventListener( new ValueEventListener() {
@@ -427,12 +399,9 @@ public void onBindViewHolder(ViewHolder holder, int position) {
         @Override
         public void onDataChange(@NonNull DataSnapshot snapshot) {
             if (snapshot.exists()) {
-
                 int sum = 0;
                 sum = (int) snapshot.getChildrenCount();
                 holder.commentA.setText( Integer.toString( sum )  );
-
-
             }
             else
             {
@@ -442,10 +411,8 @@ public void onBindViewHolder(ViewHolder holder, int position) {
 
         @Override
         public void onCancelled(@NonNull DatabaseError error) {
-
         }
     } );
-
 
     DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference().child( "Post" ).child("like");
 
@@ -458,8 +425,6 @@ public void onBindViewHolder(ViewHolder holder, int position) {
                 int sum = 0;
                 sum = (int) snapshot.getChildrenCount();
                 holder.likecountA.setText( Integer.toString( sum )  );
-
-
             }
             else
             {
@@ -473,7 +438,6 @@ public void onBindViewHolder(ViewHolder holder, int position) {
         }
     } );
 
-
     DatabaseReference reference3 = FirebaseDatabase.getInstance().getReference().child( "Post" ).child("Dislike");
 
     reference3.child(commModel.getPostId()).addValueEventListener( new ValueEventListener() {
@@ -481,12 +445,9 @@ public void onBindViewHolder(ViewHolder holder, int position) {
         @Override
         public void onDataChange(@NonNull DataSnapshot snapshot) {
             if (snapshot.exists()) {
-
                 int sum = 0;
                 sum = (int) snapshot.getChildrenCount();
                 holder.dislikecountA.setText( Integer.toString( sum )  );
-
-
             }
             else
             {
@@ -496,15 +457,8 @@ public void onBindViewHolder(ViewHolder holder, int position) {
 
         @Override
         public void onCancelled(@NonNull DatabaseError error) {
-
         }
     } );
-
-
-
-
-
-
 }
 
         @Override
@@ -537,11 +491,6 @@ public class ViewHolder extends RecyclerView.ViewHolder {
         rlAddComm = itemView.findViewById(R.id.rlAddComm);
         AddComm = itemView.findViewById(R.id.AddComm);
         PostComm = itemView.findViewById(R.id.PostComm);
-
-
-
-
-
     }
 }
 }

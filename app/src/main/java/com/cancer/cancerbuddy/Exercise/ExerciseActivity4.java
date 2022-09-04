@@ -17,7 +17,6 @@ public class ExerciseActivity4 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercise4);
 
-
         back_to_mainN = findViewById(R.id.back_to_mainN);
 
         back_to_mainN.setOnClickListener(new View.OnClickListener() {
@@ -27,7 +26,6 @@ public class ExerciseActivity4 extends AppCompatActivity {
                 Intent intent = new Intent(ExerciseActivity4.this, ExerciseActivity.class);
                 startActivity(intent);
                 finish();
-
 
             }
         });

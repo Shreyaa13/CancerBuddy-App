@@ -156,6 +156,7 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    // forgot password dialog box
     private void showRecoverPasswordDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Recover Password");
@@ -188,6 +189,7 @@ public class LoginActivity extends AppCompatActivity {
         builder.create().show();
     }
 
+    //recovery of password
     private void beginRecovery(String email) {
 
         dialog = new Dialog(LoginActivity.this);
@@ -222,6 +224,7 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    //user login
     private void loginUserAccount() {
         dialog = new Dialog(LoginActivity.this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);

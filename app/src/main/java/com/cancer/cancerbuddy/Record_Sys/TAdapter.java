@@ -32,12 +32,6 @@ public class TAdapter extends RecyclerView.Adapter<TAdapter.ViewHolder> {
     private DatabaseReference CommRef,UsersRef;
     String currentUserID;
 
-
-
-
-
-
-
     public TAdapter(Context context, List<TModel> list) {
         this.context = context;
         this.list = list;
@@ -53,17 +47,12 @@ public class TAdapter extends RecyclerView.Adapter<TAdapter.ViewHolder> {
     public void onBindViewHolder(TAdapter.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         TModel TModel = list.get(position);
 
-
         mAuth = FirebaseAuth.getInstance();
         currentUserID = mAuth.getCurrentUser().getUid();
         CommRef = FirebaseDatabase.getInstance().getReference().child( "Community" );
         UsersRef = FirebaseDatabase.getInstance().getReference().child( "Users" ).child( currentUserID );
 
-
-
         // getData
-
-
         String title = TModel.getTitle();
         String date = TModel.getDate();
         String desc = TModel.getDesc();
@@ -71,8 +60,6 @@ public class TAdapter extends RecyclerView.Adapter<TAdapter.ViewHolder> {
 
 
         // setData
-
-
         holder.event_1.setText(title);
         holder.event_2.setText(date);
         holder.event_3.setText(desc);
@@ -84,6 +71,7 @@ public class TAdapter extends RecyclerView.Adapter<TAdapter.ViewHolder> {
         }*/
 
       //  holder.event_showR.remove
+        //allow user to delete symtom record from the current date
         holder.event_showR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -130,9 +118,6 @@ public class TAdapter extends RecyclerView.Adapter<TAdapter.ViewHolder> {
 
             }
         });
-
-
-
     }
 
     @Override
@@ -153,9 +138,6 @@ public class TAdapter extends RecyclerView.Adapter<TAdapter.ViewHolder> {
             event_3 = itemView.findViewById(R.id.event_3);
             event_4 = itemView.findViewById(R.id.event_4);
             event_showR = itemView.findViewById(R.id.event_showR);
-
-
-
 
         }
     }

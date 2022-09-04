@@ -46,15 +46,11 @@ public class ProfileUpdateActivity extends AppCompatActivity  {
     String currentUserID;
     Dialog dialog;
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
         getWindow().setFlags( WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN );
         setContentView( R.layout.activity_profile_update );
-
 
         dialog = new Dialog(ProfileUpdateActivity.this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -70,18 +66,9 @@ public class ProfileUpdateActivity extends AppCompatActivity  {
             }
         }, 3000);
 
-
-
-
-
-
-
         mAuth = FirebaseAuth.getInstance();
         currentUserID = mAuth.getCurrentUser().getUid();
         UsersRef = FirebaseDatabase.getInstance().getReference().child( "Users" ).child( currentUserID );
-
-
-
 
         FullName =  findViewById( R.id.setup_fullname );
         MobileNo =  findViewById( R.id.setup_mobile );
@@ -95,8 +82,6 @@ public class ProfileUpdateActivity extends AppCompatActivity  {
         loadingBar = new ProgressDialog( this );
 
         LoadProfileInfo();
-
-
 
         setup_Radio_Group.setOnCheckedChangeListener( (group, i) -> {
             setup_for_radiobtn = setup_Radio_Group.findViewById( i );
@@ -112,7 +97,6 @@ public class ProfileUpdateActivity extends AppCompatActivity  {
 
         } );
 
-
         //  Card_setup_button.setOnClickListener( view -> SaveAccountSetupInformation() );
         Card_setup_button.setOnClickListener( new View.OnClickListener() {
             @Override
@@ -120,12 +104,7 @@ public class ProfileUpdateActivity extends AppCompatActivity  {
                 SaveAccountSetupInformation();
             }
         } );
-
-
     }
-
-
-
 
     private void LoadProfileInfo()
     {
@@ -141,7 +120,6 @@ public class ProfileUpdateActivity extends AppCompatActivity  {
                             String Mobile_No =""+snapshot.child( "Mobile_No" ).getValue();
 
                             String Gender =""+snapshot.child( "Gender" ).getValue();
-
 
                             // set Data
 
@@ -163,7 +141,6 @@ public class ProfileUpdateActivity extends AppCompatActivity  {
 
     private void SaveAccountSetupInformation()
     {
-
         String fullname = FullName.getText().toString();
         String mobile = MobileNo.getText().toString();
         String cancerStage1 = CancerDesc.getText().toString();
@@ -172,7 +149,6 @@ public class ProfileUpdateActivity extends AppCompatActivity  {
 
         String pgender = strGender;
 
-
         if (fullname.isEmpty() || mobile.isEmpty()  || mobile.isEmpty()  ||countryCode.isEmpty() || age.isEmpty() || setup_Radio_Group.getCheckedRadioButtonId() == -1) {
             Toast.makeText( ProfileUpdateActivity.this, "Please Fill Your Data ", Toast.LENGTH_SHORT ).show();
             dialog.dismiss();
@@ -180,9 +156,6 @@ public class ProfileUpdateActivity extends AppCompatActivity  {
         }
         else
         {
-
-
-
                 dialog.show();
 
                 HashMap userMap = new HashMap();
@@ -193,12 +166,10 @@ public class ProfileUpdateActivity extends AppCompatActivity  {
                 userMap.put( "Cancer_Stage", cancerStage1 );
                 userMap.put( "Age", age );
 
-
                 UsersRef.updateChildren( userMap ).addOnCompleteListener( new OnCompleteListener() {
                     @Override
                     public void onComplete(@NonNull Task task) {
                         if (task.isSuccessful()) {
-
 
                             new Handler().postDelayed(new Runnable() {
                                 @Override
@@ -219,7 +190,6 @@ public class ProfileUpdateActivity extends AppCompatActivity  {
                 } );
             }
 
-
     }
     private void SendUserToMainActivity()
     {
@@ -228,6 +198,5 @@ public class ProfileUpdateActivity extends AppCompatActivity  {
         startActivity(mainIntent);
         finish();
     }
-
 
 }

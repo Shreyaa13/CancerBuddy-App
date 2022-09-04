@@ -85,8 +85,6 @@ public class Medicine_ManagementActivity extends AppCompatActivity {
 
         LoadAllPost();
 
-
-
     }
 
     private void ClickPost() {
@@ -109,6 +107,7 @@ public class Medicine_ManagementActivity extends AppCompatActivity {
     }
 
     private String pdtxt1,pdtxt2,pdtxt3;
+    //input medicine data
     private void inputData()
     {
         pdtxt1 = txt_1.getText().toString().trim();
@@ -128,6 +127,7 @@ public class Medicine_ManagementActivity extends AppCompatActivity {
         }
     }
 
+    //store data to database
     private void PostDataMM()
     {
         final String PostId= ""+System.nanoTime();
@@ -155,6 +155,7 @@ public class Medicine_ManagementActivity extends AppCompatActivity {
                 } );
     }
 
+    //load all medicine details from database
     private void LoadAllPost() {
         MedicineModels = new ArrayList<>();
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child( "Medicine_Management" );

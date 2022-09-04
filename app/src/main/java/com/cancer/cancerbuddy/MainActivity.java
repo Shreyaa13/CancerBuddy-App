@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements ConnectionReceive
         fcard3 = findViewById(R.id.fcard3);
         fcard4 = findViewById(R.id.fcard4);
 
-
+        //shortcut for medicine management page
         mainT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -120,7 +120,6 @@ public class MainActivity extends AppCompatActivity implements ConnectionReceive
         getSupportActionBar().setDisplayHomeAsUpEnabled( true );
         navigationView =  findViewById(R.id.navigation_view);
 
-
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener()
         {
             @Override
@@ -131,32 +130,23 @@ public class MainActivity extends AppCompatActivity implements ConnectionReceive
             }
         });
 
-
     }
+    //redirects user to profile page
     @Override
     public boolean onOptionsItemSelected(MenuItem itemView)
     {
 
         int id = itemView.getItemId();
-        if (id == R.id.action_Complaint)
-        {
-            Intent intent = new Intent( MainActivity.this, ProfileActivity.class );
-            startActivity( intent );
+        if (id == R.id.action_Complaint) {
+            Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+            startActivity(intent);
 
         }
-       /* if (id == R.id.action_notice)
-        {
-            Intent intent = new Intent( MainActivity.this, AddContactsActivity.class );
-            startActivity( intent );
-
-        }*/
-
 
         if(actionBarDrawerToggle.onOptionsItemSelected(itemView))
         {
             return true;
         }
-
         return super.onOptionsItemSelected(itemView);
 
     }
@@ -166,12 +156,9 @@ public class MainActivity extends AppCompatActivity implements ConnectionReceive
     protected void onStart() {
         super.onStart();
 
-
         if (CurrentUser == null) {
             SendUserToLoginActivity();
         }
-
-
     }
 
 
@@ -183,8 +170,6 @@ public class MainActivity extends AppCompatActivity implements ConnectionReceive
         if (drawerLayout.isDrawerOpen( GravityCompat.START )){
             drawerLayout.closeDrawer( GravityCompat.START );
         }
-
-
         else if (doubleBackToExitPressedOnce) {
             super.onBackPressed();
             return;
@@ -200,7 +185,6 @@ public class MainActivity extends AppCompatActivity implements ConnectionReceive
                 doubleBackToExitPressedOnce=false;
             }
         }, 2000);
-
 
         checkConnection();
     }
@@ -243,28 +227,6 @@ public class MainActivity extends AppCompatActivity implements ConnectionReceive
             // set text color
             color = Color.WHITE;
 
-            // Auto start of viewpager
-         /*   final Handler handler = new Handler();
-            final Runnable Update = new Runnable() {
-                public void run() {
-
-                    //  int count = viewPager.getChildCount();
-
-                    viewPager.setCurrentItem(currentPage % 5, true);
-                    //  viewPager.setCurrentItem(currentPage % 5, true);
-                    currentPage++;
-
-                }
-            };
-            Timer swipeTimer = new Timer();
-            swipeTimer.schedule(new TimerTask() {
-                @Override
-                public void run() {
-                    handler.post(Update);
-                }
-            }, 500, 3000);*/
-
-
         } else {
 
             // when internet
@@ -277,33 +239,12 @@ public class MainActivity extends AppCompatActivity implements ConnectionReceive
             // initialize view
             View view = snackbar.getView();
 
-            // Assign variable
-            // TextView textView = view.findViewById(R.id.txt_other);
-
-            // set text color
-            //  textView.setTextColor(color);
-
             // show snack bar
             snackbar.show();
 
             // set text color
             color = Color.RED;
         }
-
-        // initialize snack bar
-        //  Snackbar snackbar = Snackbar.make(findViewById(R.id.txt_other), message, Snackbar.LENGTH_LONG);
-
-        // initialize view
-        // View view = snackbar.getView();
-
-        // Assign variable
-        // TextView textView = view.findViewById(R.id.txt_other);
-
-        // set text color
-        //  textView.setTextColor(color);
-
-        // show snack bar
-        //  snackbar.show();
     }
 
     @Override
@@ -334,64 +275,44 @@ public class MainActivity extends AppCompatActivity implements ConnectionReceive
 
         return true;
     }
+
+    //switch case for all nav bar menu options
     private void UserMenuSelector(MenuItem item)
     {
-
         switch (item.getItemId())
         {
-
              case R.id.nav_profile:
                  ProfileBar();
-
-           // Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show();
               break;
-
              case R.id.nav_medicine:
                  MedicineBar();
-            // Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
                  break;
-
               case R.id.nav_track_sym:
                 TrackSys();
-            // Toast.makeText(this, "Upcoming", Toast.LENGTH_SHORT).show();
               break;
               case R.id.nav_track_sym1:
                 ViewTrackSys();
-            // Toast.makeText(this, "Upcoming", Toast.LENGTH_SHORT).show();
               break;
-
               case R.id.nav_food_diet:
                     FoodBar();
-            // Toast.makeText(this, "Upcoming", Toast.LENGTH_SHORT).show();
                break;
-
               case R.id.nav_exercise:
                     ExerciseBar();
-             //Toast.makeText(this, "Upcoming", Toast.LENGTH_SHORT).show();
                break;
                case R.id.nav_communityf:
                     CommunityBar();
-            // Toast.makeText(this, "Upcoming", Toast.LENGTH_SHORT).show();
                break;
                 case R.id.nav_about_me:
                     AboutMeBar();
-            // Toast.makeText(this, "Upcoming", Toast.LENGTH_SHORT).show();
                break;
                 case R.id.nav_TermC:
                     TermBar();
-            // Toast.makeText(this, "Upcoming", Toast.LENGTH_SHORT).show();
                break;
-
-
             case R.id.nav_logout:
                 mAuth.signOut();
                   SendUserToLoginActivity();
                     break;
-               // Toast.makeText(this, "Upcoming ", Toast.LENGTH_SHORT).show();
-
-
         }
-
     }
 
     private void SendUserToLoginActivity() {
@@ -403,7 +324,6 @@ public class MainActivity extends AppCompatActivity implements ConnectionReceive
 
     private void TermBar() {
        Intent intent = new Intent(MainActivity.this, TermActivity.class);
-      //  Intent intent = new Intent(MainActivity.this, AboutUsActivity.class);
         startActivity(intent);
         finish();
     }

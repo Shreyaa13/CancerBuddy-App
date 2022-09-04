@@ -40,12 +40,6 @@ public class TrackRecordAdapter extends RecyclerView.Adapter<TrackRecordAdapter.
     private DatabaseReference CommRef,UsersRef;
     String currentUserID,Str_Infection;
 
-
-
-
-
-
-
     public TrackRecordAdapter(Context context, List<TrackRecordModel> list) {
         this.context = context;
         this.list = list;
@@ -61,30 +55,21 @@ public class TrackRecordAdapter extends RecyclerView.Adapter<TrackRecordAdapter.
     public void onBindViewHolder(TrackRecordAdapter.ViewHolder holder, int position) {
         TrackRecordModel TrackRecordModel = list.get(position);
 
-
         mAuth = FirebaseAuth.getInstance();
         currentUserID = mAuth.getCurrentUser().getUid();
         CommRef = FirebaseDatabase.getInstance().getReference().child( "TrackRecord" );
         UsersRef = FirebaseDatabase.getInstance().getReference().child( "Users" ).child( currentUserID );
 
-
-
         // getData
-
-
         String Id = TrackRecordModel.getId();
         String title = TrackRecordModel.getTitle();
 
-
-
         // setData
-
-
         holder.title.setText(title);
-
 
         //  holder.event_showR.remove
 
+        //input fields for symptoms visible
         holder.up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -96,6 +81,7 @@ public class TrackRecordAdapter extends RecyclerView.Adapter<TrackRecordAdapter.
             }
         });
 
+        //input fields for symptoms invisible
         holder.down.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -107,6 +93,7 @@ public class TrackRecordAdapter extends RecyclerView.Adapter<TrackRecordAdapter.
             }
         });
 
+        //store user input symptom record to database
         holder.btn_regOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -172,6 +159,7 @@ public class TrackRecordAdapter extends RecyclerView.Adapter<TrackRecordAdapter.
             }
         });
 
+        //radio buttons for symtom status
         holder.RadioG.setOnCheckedChangeListener( (group, i) -> {
             holder.setup_for_radiobtn = holder.RadioG.findViewById( i );
             switch (i) {
@@ -191,7 +179,6 @@ public class TrackRecordAdapter extends RecyclerView.Adapter<TrackRecordAdapter.
             }
 
         } );
-
 
     }
 
@@ -225,9 +212,6 @@ public class TrackRecordAdapter extends RecyclerView.Adapter<TrackRecordAdapter.
             btn_regCancle = itemView.findViewById(R.id.btn_regCancle);
             btn_regOk = itemView.findViewById(R.id.btn_regOk);
             L1 = itemView.findViewById(R.id.L1);
-
-
-
 
         }
     }

@@ -46,9 +46,7 @@ public class RecipesActivity extends AppCompatActivity {
             }
         });
 
-
-
-
+        //adding link for recipe 1
         link1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,7 +73,6 @@ public class RecipesActivity extends AppCompatActivity {
                 alert.show();
             }
         });
-
 
         link2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -359,8 +356,5 @@ public class RecipesActivity extends AppCompatActivity {
 
             }
         });
-
-
     }
-
 }

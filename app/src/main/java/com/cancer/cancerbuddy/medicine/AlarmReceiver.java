@@ -24,10 +24,7 @@ public class AlarmReceiver extends BroadcastReceiver {
 
         Uri sound = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE + "://" + context.getPackageName() + "/" + R.raw.wake);
 
-
-
-
-
+        //future development for receiving alarm notifications
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context,"cancer_buddy")
                 .setSmallIcon(R.drawable.ic_launcher_background)
                // .setContentTitle("Foxandroid Alarm Manager")
@@ -44,8 +41,6 @@ public class AlarmReceiver extends BroadcastReceiver {
         MediaPlayer mp= MediaPlayer.create(context, R.raw.wake);
         mp.start();
         notificationManagerCompat.notify(123,builder.build());
-
-
 
     }
 

@@ -29,10 +29,6 @@ public class GraphChatActivity extends AppCompatActivity {
 
     ImageView back_to_mainN;
 
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,12 +44,8 @@ public class GraphChatActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
 
-
             }
         });
-
-
-
 
         graphView = findViewById(R.id.graph);
         graph1 = findViewById(R.id.graph1);
@@ -67,7 +59,6 @@ public class GraphChatActivity extends AppCompatActivity {
         graphView.addSeries(series);
 
        // LoadData();
-
 
       //  graphView.setHorizontalLabels(new String[] {"2 days ago", "yesterday", "today", "tomorrow"});
         graphView.getGridLabelRenderer().setLabelFormatter(new DefaultLabelFormatter()
@@ -88,10 +79,6 @@ public class GraphChatActivity extends AppCompatActivity {
                                                                }
                                                            }
         );
-
-
-
-
 
         // on below line we are adding data to our graph view.
         LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(new DataPoint[]{

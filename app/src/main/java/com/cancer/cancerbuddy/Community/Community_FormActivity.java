@@ -70,6 +70,7 @@ public class Community_FormActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager( this );
         ShowPostInRecy.setLayoutManager( layoutManager );
 
+        //button to add new post
         add_Post.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -90,6 +91,7 @@ public class Community_FormActivity extends AppCompatActivity {
         LoadAllPost();
     }
 
+    //send user to make a new post page
     private void CheckUser() {
         UsersRef.addValueEventListener( new ValueEventListener() {
             @Override
@@ -113,6 +115,7 @@ public class Community_FormActivity extends AppCompatActivity {
         } );
     }
 
+    //load all community posts
     private void LoadAllPost() {
         commModels = new ArrayList<>();
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child( "Community" );

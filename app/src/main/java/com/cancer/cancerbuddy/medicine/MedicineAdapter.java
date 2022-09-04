@@ -40,17 +40,11 @@ public class MedicineAdapter extends RecyclerView.Adapter<MedicineAdapter.ViewHo
 
     Dialog SetEditDialog,SetPostDose;
 
-
     TextView txt_1,txt_2,txt_3,txtid,CountDoseAlarm;
     Button btn_edt1,setAlarmDose;
     EditText CountDoseAlarmInput;
 
     String txtId;
-
-
-
-
-
 
     public MedicineAdapter(Context context, List<MedicineModel> list) {
         this.context = context;
@@ -70,13 +64,10 @@ public class MedicineAdapter extends RecyclerView.Adapter<MedicineAdapter.ViewHo
         SetEditDialog = new Dialog(context);
         SetPostDose = new Dialog(context);
 
-
-
         SetEditDialog.setContentView(R.layout.dialog_post_edit);
         SetEditDialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         SetEditDialog.setCancelable(true);
         SetEditDialog.getWindow().getAttributes().windowAnimations = R.style.animation;
-
 
         txt_1 = SetEditDialog.findViewById(R.id.txt_1);
         txt_2 = SetEditDialog.findViewById(R.id.txt_2);
@@ -84,33 +75,19 @@ public class MedicineAdapter extends RecyclerView.Adapter<MedicineAdapter.ViewHo
         txtid = SetEditDialog.findViewById(R.id.txtid);
         btn_edt1 = SetEditDialog.findViewById(R.id.btn_edt11);
 
-
-
-
-
-
         SetPostDose.setContentView(R.layout.dialog_input_alarm);
         SetPostDose.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         SetPostDose.setCancelable(true);
         SetPostDose.getWindow().getAttributes().windowAnimations = R.style.animation;
 
-
         CountDoseAlarm = SetPostDose.findViewById(R.id.doseidr);
         CountDoseAlarmInput = SetPostDose.findViewById(R.id.doseInput);
         setAlarmDose = SetPostDose.findViewById(R.id.doseSave1);
-
-
-
-
-
-
 
         mAuth = FirebaseAuth.getInstance();
         currentUserID = mAuth.getCurrentUser().getUid();
         CommRef = FirebaseDatabase.getInstance().getReference().child( "Alarm" );
         UsersRef = FirebaseDatabase.getInstance().getReference().child( "Users" ).child( currentUserID );
-
-
 
         CommRef.child(currentUserID).child(MedicineModel.getTxtId()).child("Alarm").
                 addValueEventListener(new ValueEventListener() {
@@ -135,7 +112,6 @@ public class MedicineAdapter extends RecyclerView.Adapter<MedicineAdapter.ViewHo
                     holder.setAlarm.setVisibility(View.VISIBLE);
                 }
 
-
             }
 
             @Override
@@ -144,8 +120,6 @@ public class MedicineAdapter extends RecyclerView.Adapter<MedicineAdapter.ViewHo
             }
         });
         // getData
-
-
          txtId = MedicineModel.getTxtId();
         String txt1 = MedicineModel.getTxtA();
         String txt2 = MedicineModel.getTxtB();
@@ -159,18 +133,13 @@ public class MedicineAdapter extends RecyclerView.Adapter<MedicineAdapter.ViewHo
 
         txtid.setText(txtId);
 
-
         holder.MMp1.setText( txt1 );
         holder.MMp2.setText( txt2 );
        // holder.dose1.setText( alarm );
 
-
-
-
         holder.setedit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
 
                 SetEditDialog.show();
 
@@ -189,8 +158,6 @@ public class MedicineAdapter extends RecyclerView.Adapter<MedicineAdapter.ViewHo
                 intent.putExtra("Id",MedicineModel.getTxtId());
 
                 context.startActivity(intent);
-
-
             }
         });
 
@@ -207,8 +174,6 @@ public class MedicineAdapter extends RecyclerView.Adapter<MedicineAdapter.ViewHo
                 intent.putExtra("Id",MedicineModel.getTxtId());
 
                 context.startActivity(intent);*/
-
-
 
                 AlertDialog.Builder dialog=new AlertDialog.Builder(context);
                // dialog.setMessage("Please Select any option");
@@ -233,25 +198,15 @@ public class MedicineAdapter extends RecyclerView.Adapter<MedicineAdapter.ViewHo
                 AlertDialog alertDialog=dialog.create();
                 alertDialog.show();
 
-
-
             }
         });
 
-
-
-
     }
-
 
     @Override
     public int getItemCount() {
         return list.size();
     }
-
-
-
-
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView MMp1, MMp2,dose1,dose2,dose3;
@@ -269,8 +224,6 @@ public class MedicineAdapter extends RecyclerView.Adapter<MedicineAdapter.ViewHo
             dose1 = itemView.findViewById(R.id.dose1);
             dose2 = itemView.findViewById(R.id.dose2);
             dose3 = itemView.findViewById(R.id.dose3);
-
-
 
         }
     }

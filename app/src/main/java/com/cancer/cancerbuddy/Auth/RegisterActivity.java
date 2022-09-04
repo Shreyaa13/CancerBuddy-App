@@ -148,6 +148,7 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
+    //registration of new user
     private void registerNewUser()
     {
         dialog = new Dialog(RegisterActivity.this);
@@ -239,6 +240,7 @@ public class RegisterActivity extends AppCompatActivity {
         }
     }
 
+    //gmail registration(third-party)
     private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
         Log.d(TAG, "firebaseAuthWithGoogle:" + acct.getId());
         AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);

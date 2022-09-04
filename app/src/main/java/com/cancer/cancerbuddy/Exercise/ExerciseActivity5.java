@@ -28,7 +28,6 @@ public class ExerciseActivity5 extends AppCompatActivity {
                 startActivity(intent);
                 finish();
 
-
             }
         });
     }

@@ -35,8 +35,6 @@ public class FoodActivity extends AppCompatActivity {
                 Intent intent = new Intent(FoodActivity.this, food_DietActivity.class);
                 startActivity(intent);
                 finish();
-
-
             }
         });
 
@@ -45,6 +43,7 @@ public class FoodActivity extends AppCompatActivity {
         link = findViewById(R.id.link);
         link1 = findViewById(R.id.link1);
 
+        //using special library class to zoom in/out image
         PhotoViewAttacher pAttacher,pAttacher1;
         pAttacher = new PhotoViewAttacher(foodRe);
         pAttacher1 = new PhotoViewAttacher(foodRe1);
@@ -61,19 +60,12 @@ public class FoodActivity extends AppCompatActivity {
 
         ImageView img= dialog.findViewById(R.id.backToHide);
 
-
-
         dialog1 = new Dialog(FoodActivity.this);
         dialog1.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog1.setContentView(R.layout.food_desc1);
         dialog1.setCanceledOnTouchOutside(false);
 
         ImageView img1= dialog1.findViewById(R.id.backToHide);
-
-
-
-
-
 
         link.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -64,8 +64,6 @@ public class AlarmActivity extends AppCompatActivity {
         currentUserID = mAuth.getCurrentUser().getUid();
         UsersRef = FirebaseDatabase.getInstance().getReference().child( "Users" ).child( currentUserID );
 
-
-
         selectedTime = findViewById(R.id.selectedTime);
         selectTimeBtn = findViewById(R.id.selectTimeBtn);
         setAlarmBtn = findViewById(R.id.setAlarmBtn);
@@ -106,8 +104,7 @@ public class AlarmActivity extends AppCompatActivity {
 
     }
 
-
-
+    //user can cancel alarm selected
     private void cancelAlarm() {
 
         Intent intent = new Intent(this,AlarmReceiver.class);
@@ -122,8 +119,6 @@ public class AlarmActivity extends AppCompatActivity {
 
             music.stop();
 
-
-
         }
 
         alarmManager.cancel(pendingIntent);
@@ -132,19 +127,16 @@ public class AlarmActivity extends AppCompatActivity {
         music.stop();
     }
 
+    //user can set the alarm
     private void setAlarm() {
 
         alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-
         Intent intent = new Intent(this, AlarmReceiver.class);
-
         pendingIntent = PendingIntent.getBroadcast(this,0,intent,0);
-
         alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),
                 AlarmManager.INTERVAL_DAY,pendingIntent);
 
         Toast.makeText(this, selectedTime.getText(), Toast.LENGTH_SHORT).show();
-
         sendAdapter();
 
         HashMap userMap = new HashMap();
@@ -158,13 +150,9 @@ public class AlarmActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task task) {
                 if (task.isSuccessful()) {
-
-
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
-
-
                             Toast.makeText( AlarmActivity.this, "your Alarm Set Successfully.", Toast.LENGTH_LONG ).show();
 
                         }
@@ -180,20 +168,13 @@ public class AlarmActivity extends AppCompatActivity {
         } );
     }
 
-
-
-
-
-
-
-
-
     private void sendAdapter() {
         Intent intent = new Intent(AlarmActivity.this, Medicine_ManagementActivity.class);
         intent.putExtra("setAlarm",selectedTime.getText());
         startActivity(intent);
     }
 
+    //time picker to set time for alarm
     private void showTimePicker() {
 
         picker = new MaterialTimePicker.Builder()
@@ -208,15 +189,12 @@ public class AlarmActivity extends AppCompatActivity {
         picker.addOnPositiveButtonClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 if (picker.getHour() > 12){
-
                  selectedTime.setText(
                             String.format("%02d",(picker.getHour()-12))+" : "+String.format("%02d",picker.getMinute())+" PM"
                     );
 
                 }else {
-
                     selectedTime.setText(picker.getHour()+" : " + picker.getMinute() + " AM");
 
                 }
@@ -229,10 +207,9 @@ public class AlarmActivity extends AppCompatActivity {
 
             }
         });
-
-
     }
 
+    //trying to create the backend notification system
     private void createNotificationChannel() {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
@@ -245,8 +222,6 @@ public class AlarmActivity extends AppCompatActivity {
             NotificationManager notificationManager = getSystemService(NotificationManager.class);
             notificationManager.createNotificationChannel(channel);
 
-
-
             Date currentTime = Calendar.getInstance().getTime();
             String setAlarmTime = selectedTime.getText().toString();
 
@@ -254,15 +229,12 @@ public class AlarmActivity extends AppCompatActivity {
                 MediaPlayer music = MediaPlayer.create(
                         this, R.raw.wake);
             }
-
              /*music = MediaPlayer.create(
                     this, R.raw.wake);
 
             music.start();*/
 
         }
-
-
     }
 
 }

@@ -51,7 +51,6 @@ public class CommPostActivity extends AppCompatActivity {
     Button PostC;
     TextView Date_and_TimeP,NameCP;
 
-
     private static final  int CAMERA_REQUEST_CODE = 200;
     private static final  int STORAGE_REQUEST_CODE = 300;
     private static final  int IMAGE_PICK_GALLERY_CODE = 400;
@@ -61,14 +60,11 @@ public class CommPostActivity extends AppCompatActivity {
     private String[] storagePermissions;
     private Uri image_uri;
 
-
-
     private FirebaseAuth mAuth;
     private DatabaseReference CommRef,UsersRef;
     String currentUserID;
 
     Dialog dialog;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,23 +80,18 @@ public class CommPostActivity extends AppCompatActivity {
                 Intent intent = new Intent(CommPostActivity.this, Community_FormActivity.class);
                 startActivity(intent);
                 finish();
-
-
             }
         });
-
 
         mAuth = FirebaseAuth.getInstance();
         currentUserID = mAuth.getCurrentUser().getUid();
         CommRef = FirebaseDatabase.getInstance().getReference().child( "Community" );
         UsersRef = FirebaseDatabase.getInstance().getReference().child( "Users" ).child( currentUserID );
 
-
         descPost = findViewById(R.id.descPost);
         imgComm = findViewById(R.id.imgComm);
         PostC = findViewById(R.id.PostC);
         NameCP = findViewById(R.id.NameCP);
-
 
         PostC.setOnClickListener( new View.OnClickListener() {
             @Override
@@ -116,6 +107,8 @@ public class CommPostActivity extends AppCompatActivity {
         } );
 
         LoadProfileInfo();
+
+        //add image from gallery requires permissions
         imgComm.setOnClickListener( new View.OnClickListener()
         {
             @Override
@@ -128,12 +121,10 @@ public class CommPostActivity extends AppCompatActivity {
 
     }
 
-
-
     String Full_Name;
+    //loading profile details for display
     private void LoadProfileInfo()
     {
-
         UsersRef
                 .addValueEventListener( new ValueEventListener() {
                     @Override
@@ -142,11 +133,7 @@ public class CommPostActivity extends AppCompatActivity {
                         {
                             // load data
                              Full_Name =""+snapshot.child( "Full_Name" ).getValue();
-
                             NameCP.setText("Hi "+ Full_Name );
-
-
-
                         }
                     }
 
@@ -157,12 +144,12 @@ public class CommPostActivity extends AppCompatActivity {
                 } );
     }
 
-
     private String DescPost;
+
+    //adding description in post
     private void inputData()
     {
         DescPost = descPost.getText().toString().trim();
-
 
         if (TextUtils.isEmpty( DescPost ))
         {
@@ -171,20 +158,17 @@ public class CommPostActivity extends AppCompatActivity {
             return;
 
         }
-
-
         else {
 /*
             loadingBar.setTitle("Saving Information");
             loadingBar.setMessage("Please wait, Product Added Successfully...");
             loadingBar.show();
             loadingBar.setCanceledOnTouchOutside(true);*/
-
             PostSocial();
         }
-
     }
 
+    //adding post to database
     private void PostSocial()
     {
         final String PostId= ""+System.nanoTime();
@@ -282,8 +266,7 @@ public class CommPostActivity extends AppCompatActivity {
         finish();
     }
 
-
-
+    //image pick dialog
     private void ShowImagePickDialog()
     {
         String[] options = {"Camera" , "Gallery"};
@@ -353,11 +336,8 @@ public class CommPostActivity extends AppCompatActivity {
     private boolean CheckCameraPermission()
     {
         boolean result = ContextCompat.checkSelfPermission( this, Manifest.permission.CAMERA ) == (PackageManager.PERMISSION_GRANTED);
-
         boolean result1 = ContextCompat.checkSelfPermission( this, Manifest.permission.WRITE_EXTERNAL_STORAGE ) == (PackageManager.PERMISSION_GRANTED);
-
         return result && result1;
-
     }
 
     private void RequestCameraPermission ()

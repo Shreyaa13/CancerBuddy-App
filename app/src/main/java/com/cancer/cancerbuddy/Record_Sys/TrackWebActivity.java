@@ -32,7 +32,6 @@ public class TrackWebActivity extends AppCompatActivity {
         webViewPension1 = findViewById(R.id.webViewPension1);
 
 
-
         dialog = new Dialog(TrackWebActivity.this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.dialog_wait1);
@@ -48,8 +47,7 @@ public class TrackWebActivity extends AppCompatActivity {
         }, 7000);
 
 
-
-
+        //for further development - use of web was being tried
         webViewPension1.setWebViewClient(new TrackWebActivity.myWebClient());
         webViewPension1.getSettings().setJavaScriptEnabled(true);
         webViewPension1.getSettings().setLoadWithOverviewMode(true);
@@ -108,8 +106,6 @@ public class TrackWebActivity extends AppCompatActivity {
             view.loadUrl(url);
             return true;
 
-
-
         }
 
         public void onPageFinished(WebView view, String url) {
@@ -118,9 +114,6 @@ public class TrackWebActivity extends AppCompatActivity {
             //  }
         }
 
-
-
-
     }
 
     @Override
@@ -128,7 +121,6 @@ public class TrackWebActivity extends AppCompatActivity {
     public void onBackPressed() {
 
         dialog.dismiss();
-
 
         Intent intent = new Intent(TrackWebActivity.this, Track_SystemActivity.class);
         startActivity(intent);

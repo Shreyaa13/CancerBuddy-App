@@ -16,12 +16,10 @@ public class ExerciseActivity extends AppCompatActivity {
 
     ImageView back_to_mainN;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercise);
-
 
         mainT = findViewById(R.id.mainT);
         mainT1 = findViewById(R.id.mainT1);
@@ -35,12 +33,9 @@ public class ExerciseActivity extends AppCompatActivity {
         back_to_mainN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent intent = new Intent(ExerciseActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
-
-
             }
         });
 
@@ -89,7 +84,6 @@ public class ExerciseActivity extends AppCompatActivity {
 
             }
         });
-
 
     }
 

@@ -40,23 +40,14 @@ public class ProfileActivity extends AppCompatActivity {
     private DatabaseReference firebaseReference;
     Dialog dialog;
 
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags( WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN );
         setContentView(R.layout.activity_profile);
 
-
-
         //check Internet Connection
         //   new CheckInternetConnection(this).checkConnection();
-
-
-
 
         dialog = new Dialog(ProfileActivity.this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -67,7 +58,6 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void run() {
                 dialog.dismiss();
-
 
             }
         }, 3000);
@@ -83,16 +73,12 @@ public class ProfileActivity extends AppCompatActivity {
         profileUpdateSetup = findViewById( R.id.profileUpdateSetup );
         CardProfileSetup = findViewById( R.id.CardProfileSetup );*/
 
-
         PostP = findViewById( R.id.PostP );
         Pprofile = findViewById( R.id.Pprofile );
         CancerD = findViewById( R.id.CancerD );
         Page = findViewById( R.id.Page );
         back_to_mainN = findViewById( R.id.back_to_mainN );
         PCountry = findViewById( R.id.PCountry );
-
-
-
 
         back_to_mainN.setOnClickListener( new View.OnClickListener() {
             @Override
@@ -103,6 +89,7 @@ public class ProfileActivity extends AppCompatActivity {
             }
         } );
 
+        //redirect user to update profile page
         PostP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -110,7 +97,6 @@ public class ProfileActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
 
     }
 
@@ -132,7 +118,7 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
 
-
+    //display profile credentials
     @Override
     protected void onStart() {
         super.onStart();

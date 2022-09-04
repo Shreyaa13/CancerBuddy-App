@@ -27,7 +27,6 @@ public class ExerciseActivity2 extends AppCompatActivity {
                 startActivity(intent);
                 finish();
 
-
             }
         });
     }

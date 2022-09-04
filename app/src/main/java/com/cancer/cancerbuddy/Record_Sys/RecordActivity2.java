@@ -37,7 +37,7 @@ public class RecordActivity2 extends AppCompatActivity {
         viewOnCalender = findViewById(R.id.viewOnCalender);
         viewOnGraph = findViewById(R.id.viewOnGraph);
 
-
+        //redirect user to view calendar page
         viewOnCalender.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,6 +46,7 @@ public class RecordActivity2 extends AppCompatActivity {
             }
         });
 
+        //redirect user to view graph page
         viewOnGraph.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override

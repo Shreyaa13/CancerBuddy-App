@@ -43,8 +43,6 @@ public class TrackSyntomActivity extends AppCompatActivity {
 
     ImageView back_to_mainN;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,7 +53,6 @@ public class TrackSyntomActivity extends AppCompatActivity {
        /* CommRef = FirebaseDatabase.getInstance().getReference().child( "Community" );
         UsersRef = FirebaseDatabase.getInstance().getReference().child( "Users" ).child( currentUserID );
         */
-
 
         // By ID we can use each component
         // which id is assign in xml file
@@ -77,7 +74,7 @@ public class TrackSyntomActivity extends AppCompatActivity {
         });
 
 
-        // Add Listener in calendar
+        // Add Listener in calendar for when date selcted is changed
         calendar
                 .setOnDateChangeListener(
                         new CalendarView
@@ -121,15 +118,9 @@ public class TrackSyntomActivity extends AppCompatActivity {
         ShowTrackRecord.setLayoutManager( layoutManager );
         LoadAllRecord();
 
-
-
     }
 
-
-
-
-
-
+    //display all recorded symptoms of current date
     private void LoadAllRecord() {
         String saveCurrentDate;
         Calendar calendar = Calendar.getInstance();
@@ -156,6 +147,7 @@ public class TrackSyntomActivity extends AppCompatActivity {
                 } );
     }
 
+    //display all recorded symptoms for date selected
     private void LoadAllRecord1() {
 
         String txt1 = date_view.getText().toString();

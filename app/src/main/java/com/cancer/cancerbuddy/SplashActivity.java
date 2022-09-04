@@ -13,7 +13,6 @@ import com.cancer.cancerbuddy.Auth.LoginActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-
 @SuppressLint("CustomSplashScreen")
 public class SplashActivity extends AppCompatActivity {
 
@@ -32,10 +31,7 @@ public class SplashActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mCurrentUser = mAuth.getCurrentUser();
 
-
     }
-
-
 
     @Override
     protected void onStart() {
@@ -73,7 +69,6 @@ public class SplashActivity extends AppCompatActivity {
         finish();
         startActivity(loginIntent);
         loginIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-
 
     }
 }

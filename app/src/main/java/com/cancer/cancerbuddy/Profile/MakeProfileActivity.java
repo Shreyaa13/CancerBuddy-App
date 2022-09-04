@@ -28,7 +28,6 @@ import java.util.HashMap;
 
 public class MakeProfileActivity extends AppCompatActivity {
 
-
     private EditText FullName, MobileNo,CancerDesc,Ageid,CouId;
 
     private CardView Card_setup_button;
@@ -50,20 +49,9 @@ public class MakeProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_make_profile);
 
-
-
-
-
-
-
-
-
         mAuth = FirebaseAuth.getInstance();
         currentUserID = mAuth.getCurrentUser().getUid();
         UsersRef = FirebaseDatabase.getInstance().getReference().child( "Users" ).child( currentUserID );
-
-
-
 
         FullName =  findViewById( R.id.setup_fullname );
         MobileNo =  findViewById( R.id.setup_mobile );
@@ -76,10 +64,6 @@ public class MakeProfileActivity extends AppCompatActivity {
         // ProfileImage = (CircleImageView) findViewById( R.id.setup_profile );
         loadingBar = new ProgressDialog( this );
 
-
-
-
-
         setup_Radio_Group.setOnCheckedChangeListener( (group, i) -> {
             setup_for_radiobtn = setup_Radio_Group.findViewById( i );
             switch (i) {
@@ -91,7 +75,6 @@ public class MakeProfileActivity extends AppCompatActivity {
                     break;
                 default:
             }
-
         } );
 
 
@@ -102,7 +85,6 @@ public class MakeProfileActivity extends AppCompatActivity {
                 SaveAccountSetupInformation();
             }
         } );
-
 
     }
 

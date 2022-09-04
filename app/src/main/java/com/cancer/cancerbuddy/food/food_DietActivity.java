@@ -15,8 +15,6 @@ public class food_DietActivity extends AppCompatActivity {
     ImageView food1,food2;
     ImageView back_to_mainN;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +34,6 @@ public class food_DietActivity extends AppCompatActivity {
 
         food1 = findViewById(R.id.food1);
         food2 = findViewById(R.id.food2);
-
 
         food1.setOnClickListener(new View.OnClickListener() {
             @Override

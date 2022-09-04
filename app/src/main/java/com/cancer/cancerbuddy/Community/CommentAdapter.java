@@ -32,10 +32,6 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ViewHold
 
     Dialog dialog;
 
-
-
-
-
     public CommentAdapter(Context context, List<CommentModel> list) {
         this.context = context;
         this.list = list;
@@ -51,13 +47,11 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ViewHold
     public void onBindViewHolder(CommentAdapter.ViewHolder holder, int position) {
         CommentModel CommentModel = list.get(position);
 
-
         mAuth = FirebaseAuth.getInstance();
         currentUserID = mAuth.getCurrentUser().getUid();
         CommRef = FirebaseDatabase.getInstance().getReference().child( "Community" );
         UsersRef = FirebaseDatabase.getInstance().getReference().child( "Users" );
                // .child( currentUserID );
-
 
         UsersRef.child(CommentModel.getUserId()).addValueEventListener( new ValueEventListener() {
             @Override
@@ -65,22 +59,14 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ViewHold
 
                 if (dataSnapshot.exists())
                 {
-
-
-
-
                     String Full_Name =dataSnapshot.child( "Full_Name" ).getValue().toString();
-
                     holder.CUser.setText(Full_Name );
 
                 }
                 else
                 {
-
                     Toast.makeText(context, "Profile name do not exists...", Toast.LENGTH_SHORT).show();
                 }
-
-
             }
 
             @Override
@@ -89,11 +75,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ViewHold
             }
         } );
 
-
-
         // getData
-
-
         String Id = CommentModel.getPostId();
         String UserId = CommentModel.getUserId();
         String date = CommentModel.getDate();
@@ -101,16 +83,8 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ViewHold
 
 
         // setData
-
         holder.CDate.setText(date);
         holder.CommentC.setText(desc);
-
-
-
-
-
-
-        
 
     }
 
@@ -128,10 +102,6 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ViewHold
             CUser = itemView.findViewById(R.id.CUser);
             CDate = itemView.findViewById(R.id.CDate);
             CommentC = itemView.findViewById(R.id.CommentC);
-
-
-
-
         }
     }
 }

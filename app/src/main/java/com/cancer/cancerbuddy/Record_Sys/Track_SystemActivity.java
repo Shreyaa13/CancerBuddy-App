@@ -36,31 +36,24 @@ public class Track_SystemActivity extends AppCompatActivity {
 
     LinearLayout checkChart;
 
-
-
-
     ImageView ShowCalender, HideCalender;
 
     private RelativeLayout rl1;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_track_system);
 
-
         mAuth = FirebaseAuth.getInstance();
         currentUserID = mAuth.getCurrentUser().getUid();
         CommRef = FirebaseDatabase.getInstance().getReference().child("TrackRecord");
         UsersRef = FirebaseDatabase.getInstance().getReference().child("Users").child(currentUserID);
 
-
         checkChart = findViewById(R.id.checkChart);
         ShowCalender = findViewById(R.id.ShowCalender);
         HideCalender = findViewById(R.id.HideCalender);
         rl1 = findViewById(R.id.rl1);
-
 
         ShowCalender.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,12 +92,6 @@ public class Track_SystemActivity extends AppCompatActivity {
 
         LoadAllRecord();
 
-
-
-
-
-
-
   /*      GoTime=findViewById(R.id.GoTime);
       //  SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
@@ -112,6 +99,7 @@ public class Track_SystemActivity extends AppCompatActivity {
         GoTime.setText(currentDateandTime);*/
     }
 
+    //display all symptom categories from database
     private void LoadAllRecord() {
         TrackRecordModels = new ArrayList<>();
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child( "Infection" );

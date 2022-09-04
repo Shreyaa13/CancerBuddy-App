@@ -28,11 +28,6 @@ public class ExerciseActivity1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercise1);
 
-
-
-
-
-
         back_to_mainN = findViewById(R.id.back_to_mainN);
 
         back_to_mainN.setOnClickListener(new View.OnClickListener() {
@@ -42,7 +37,6 @@ public class ExerciseActivity1 extends AppCompatActivity {
                 Intent intent = new Intent(ExerciseActivity1.this, ExerciseActivity.class);
                 startActivity(intent);
                 finish();
-
 
             }
         });

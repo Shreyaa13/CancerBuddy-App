@@ -38,26 +38,8 @@ public class TrackSyntomActivity2 extends AppCompatActivity {
 
                 MMp21.setText(""+ value);
 
-
-
             }
         });
-
-      /*  MMp21.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-              //  AddCalendarEvent();
-
-              //  startActivity(new Intent(this, WeekViewActivity.class));
-
-                Intent intent = new Intent(TrackSyntomActivity2.this, WeekViewActivity.class);
-                startActivity(intent);
-            }
-        });*/
-
-
-
-
 
     }
 
@@ -73,9 +55,5 @@ public class TrackSyntomActivity2 extends AppCompatActivity {
         startActivity(i);
 
     }
-
-
-
-
 
 }
